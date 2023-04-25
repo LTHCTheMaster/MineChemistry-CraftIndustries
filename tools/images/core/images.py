@@ -1,13 +1,5 @@
 from PIL import Image
 
-BLACK = (0,0,0,255)
-STOPPER_LIGHT_BLUE = (23,84,135,255)
-STOPPER_DARK_BLUE = (10,38,62,255)
-NATOCC_GREEN = (45, 236, 67, 255)
-NATOCC_PINK = (215, 159, 199, 255)
-BLANK_IMAGE = (255, 255, 255, 0)
-SIZE = (16, 16)
-
 def makeColorTuple(color: str) -> tuple[int, int, int, int]:
     r, g, b = color[:2], color[2:4], color[4:]
     red = int(r, 16)
@@ -20,6 +12,18 @@ def colorMixer(maincolor: tuple[int, int, int, int], secondarycolor: tuple[int, 
 
 def makeColorDarker(color: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
     return (int(color[0]*0.88), int(color[1]*0.85), int(color[2]*0.75), 255)
+
+
+BLACK = (0,0,0,255)
+STOPPER_LIGHT_BLUE = (23,84,135,255)
+NATOCC_DECAY = (45, 236, 67, 255)
+NATOCC_SYNTHETIC = (215, 159, 199, 255)
+STOPPER_LIGHT_BLUE = (23,84,135,255)
+STOPPER_LIGHT_BLUE_DECAY = colorMixer(STOPPER_LIGHT_BLUE, NATOCC_DECAY)
+STOPPER_LIGHT_BLUE_SYNTHETIC = colorMixer(STOPPER_LIGHT_BLUE, NATOCC_SYNTHETIC)
+STOPPER_DARK_BLUE = (10,38,62,255)
+BLANK_IMAGE = (255, 255, 255, 0)
+SIZE = (16, 16)
 
 class BlankImage:
     def __init__(self, color: str, natural_occurence: str):
@@ -50,9 +54,9 @@ class solid_Image(BlankImage):
             self.image.putpixel((5,2+i),BLACK)
             self.image.putpixel((10,2+i),BLACK)
         for i in range(4):
-            self.image.putpixel((6+i,1), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((6+i,1), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,1),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((6+i,1), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((6+i,1), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,1),STOPPER_LIGHT_BLUE)
             self.image.putpixel((6+i,2),STOPPER_DARK_BLUE)
-            self.image.putpixel((6+i,3), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((6+i,3), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,3),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((6+i,3), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((6+i,3), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,3),STOPPER_LIGHT_BLUE)
         self.image.putpixel((6,14),BLACK)
         self.image.putpixel((9,14),BLACK)
         self.image.putpixel((7,15),BLACK)
@@ -75,11 +79,11 @@ class liquid_Image(BlankImage):
             self.image.putpixel((5,4+i),BLACK)
             self.image.putpixel((10,4+i),BLACK)
         for i in range(4):
-            self.image.putpixel((6+i,2), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((6+i,2), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,2),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((6+i,2), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((6+i,2), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,2),STOPPER_LIGHT_BLUE)
             self.image.putpixel((6+i,15),BLACK)
         for i in range(2):
             self.image.putpixel((7+i,3),STOPPER_DARK_BLUE)
-            self.image.putpixel((7+i,4), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((7+i,4), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((7+i,4),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((7+i,4), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((7+i,4), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((7+i,4),STOPPER_LIGHT_BLUE)
             self.image.putpixel((6,3+i),BLACK)
             self.image.putpixel((9,3+i),BLACK)
         self.image.putpixel((6,14),BLACK)
@@ -110,9 +114,9 @@ class gas_Image(BlankImage):
             self.image.putpixel((10,9+i),BLACK)
         for i in range(4):
             self.image.putpixel((6+i,1),BLACK)
-            self.image.putpixel((6+i,13), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((6+i,13), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,13),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((6+i,13), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((6+i,13), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((6+i,13),STOPPER_LIGHT_BLUE)
         for i in range(2):
-            self.image.putpixel((7+i,11), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_GREEN)) if self.natural_occurence == "decay" else self.image.putpixel((7+i,11), colorMixer(STOPPER_LIGHT_BLUE, NATOCC_PINK)) if self.natural_occurence == "synthetic" else self.image.putpixel((7+i,11),STOPPER_LIGHT_BLUE)
+            self.image.putpixel((7+i,11), STOPPER_LIGHT_BLUE_DECAY) if self.natural_occurence == "decay" else self.image.putpixel((7+i,11), STOPPER_LIGHT_BLUE_SYNTHETIC) if self.natural_occurence == "synthetic" else self.image.putpixel((7+i,11),STOPPER_LIGHT_BLUE)
             self.image.putpixel((7+i,12),STOPPER_DARK_BLUE)
             self.image.putpixel((6,2+i),BLACK)
             self.image.putpixel((9,2+i),BLACK)
