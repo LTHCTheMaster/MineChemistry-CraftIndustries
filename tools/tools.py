@@ -6,12 +6,15 @@ def work():
     while True:
         try:
             cmd = input(" :\t").split(" ")
-            if cmd[0] in ("quit", "exit", "stop"):
-                break
-            elif cmd[0] == "image":
-                img.run(cmd[1:])
-            elif cmd[0] == "export":
-                elements.exportList(cmd[1])
+            match cmd[0]:
+                case "quit" | "exit" | "stop":
+                    break
+                case "image":
+                    img.run(cmd[1:])
+                case "export":
+                    elements.exportList(cmd[1])
+                case _:
+                    pass
         except:
             pass
     return
