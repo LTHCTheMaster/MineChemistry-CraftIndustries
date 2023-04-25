@@ -1,5 +1,6 @@
 from datargsing import dGlobal_datafiles_manager as GDM
 from .images import BlankImage, solid_Image, liquid_Image, gas_Image, Image
+import os
 
 class Coords:
     def __init__(self, struct: dict):
@@ -41,17 +42,29 @@ class Element:
         self.image.getImage().save(fp=path+"/"+self.file_name+'.png',format="png")
 
 ELEMENT_PATH: str = "tools/data/struct.json"
-elements: list[Element] = []
 
-def loadElements():
-    struct_full: dict = GDM().get_from_json(ELEMENT_PATH, True)
-    for i in  struct_full:
-        elements.append(Element(i, struct_full[i]))
+class Tool:
+    def __init__(self):
+        self.elements: list[Element] = []
+        self.loadElements()
 
-def printElements():
-    for i in elements:
-        print(i)
+    def loadElements(self):
+        struct_full: dict = GDM().get_from_json(ELEMENT_PATH, True)
+        for i in  struct_full:
+            self.elements.append(Element(i, struct_full[i]))
+    
+    def reloadElements(self):
+        self.elements: list[Element] = []
+        self.loadElements()
 
-def saveElements(path: str):
-    for i in elements:
-        i.save(path)
+    def printElements(self):
+        for i in self.elements:
+            print(i)
+
+    def saveElements(self, path: str):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        for i in self.elements:
+            i.save(path)
+
+elements: Tool = Tool()

@@ -1,14 +1,13 @@
-from .core import loadElements, saveElements, PeriodicTableBuilder, elements
+from .core import PeriodicTableBuilder, elements
 
 class Run:
     def __init__(self):
-        loadElements()
-        self.period = PeriodicTableBuilder()
+        self.period = PeriodicTableBuilder(elements)
 
     def run(self, cmd: list[str]):
         if cmd[0] == "build":
             if cmd[1] == "elements":
-                saveElements(cmd[2])
+                elements.saveElements(cmd[2])
                 return
             if cmd[1] == "periodic":
                 self.period.save(cmd[2])
@@ -19,7 +18,7 @@ class Run:
                 self.period.show()
                 return
             if cmd[1] == "element":
-                for i in elements:
+                for i in elements.elements:
                     if cmd[2] == i.name.lower():
                         i.image.show()
                         return
@@ -29,5 +28,5 @@ class Run:
             return
     
     def reload(self):
-        loadElements()
-        self.period = PeriodicTableBuilder()
+        elements.reloadElements()
+        self.period = PeriodicTableBuilder(elements)
