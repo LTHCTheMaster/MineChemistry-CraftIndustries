@@ -23,3 +23,11 @@ class Run:
                     if cmd[2] == i.name.lower():
                         i.image.show()
                         return
+            return
+        if cmd[0] == "reload":
+            self.reload()
+            return
+    
+    def reload(self):
+        loadElements()
+        self.period = PeriodicTableBuilder()
