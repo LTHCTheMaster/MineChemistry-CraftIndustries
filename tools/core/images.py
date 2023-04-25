@@ -3,35 +3,18 @@ from PIL import Image
 BLACK = (0,0,0,255)
 STOPPER_LIGHT_BLUE = (23,84,135,255)
 STOPPER_DARK_BLUE = (10,38,62,255)
-
-def getDec(v: str) -> int:
-    if v == "0": return 0
-    if v == "1": return 1
-    if v == "2": return 2
-    if v == "3": return 3
-    if v == "4": return 4
-    if v == "5": return 5
-    if v == "6": return 6
-    if v == "7": return 7
-    if v == "8": return 8
-    if v == "9": return 9
-    if v == "a": return 10
-    if v == "b": return 11
-    if v == "c": return 12
-    if v == "d": return 13
-    if v == "e": return 14
-    if v == "f": return 15
+BLANK_IMAGE = (255, 255, 255, 0)
 
 def makeColorTuple(color: str) -> tuple[int, int, int, int]:
     r, g, b = color[:2], color[2:4], color[4:]
-    red = getDec(r[0]) * 16 + getDec(r[1])
-    green = getDec(g[0]) * 16 + getDec(g[1])
-    blue = getDec(b[0]) * 16 + getDec(b[1])
+    red = int(r, 16)
+    green = int(g, 16)
+    blue = int(b, 16)
     return (red, green, blue, 255)
 
 class BlankImage:
     def __init__(self, color: str):
-        self.image = Image.new("RGBA", (16, 16), (255, 255, 255, 0))
+        self.image = Image.new("RGBA", (16, 16), BLANK_IMAGE)
         self.color = makeColorTuple(color)
     
     def drawBaseForm(self):
@@ -44,6 +27,8 @@ class BlankImage:
     def show(self):
         tmp = self.image.resize((512,512),Image.Resampling.NEAREST)
         tmp.show()
+    def getImage(self) -> Image.Image:
+        return self.image
 
 class solid_Image(BlankImage):
     def __init__(self, color: str):
@@ -135,5 +120,13 @@ class gas_Image(BlankImage):
             for j in range(2):
                 self.image.putpixel((7+i,2+j),self.color)
 
-test = gas_Image("ffffff")
-test.show()
+class Coords:
+    def __init__(self, struct: dict):
+        self.x = struct["x"]
+        self.y = struct["y"]
+    
+    def pos(self) -> tuple[int, int]:
+        return (self.x, self.y)
+
+    def __str__(self) -> str:
+        return f"x: {self.x}, y: {self.y}"
