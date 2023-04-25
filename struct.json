@@ -1,0 +1,1064 @@
+{
+	"Hydrogen": {
+		"Z": "001",
+		"state": "gas",
+		"color": "ffffff",
+		"periodic_draw": {
+			"x": 0,
+			"y": 0
+		}
+	},
+	"Helium": {
+		"Z": "002",
+		"state": "gas",
+		"color": "ffc0cb",
+		"periodic_draw": {
+			"x": 272,
+			"y": 0
+		}
+	},
+	"Lithium": {
+		"Z": "003",
+		"state": "solid",
+		"color": "b22121",
+		"periodic_draw": {
+			"x": 0,
+			"y": 16
+		}
+	},
+	"Beryllium": {
+		"Z": "004",
+		"state": "solid",
+		"color": "ff1493",
+		"periodic_draw": {
+			"x": 16,
+			"y": 16
+		}
+	},
+	"Boron": {
+		"Z": "005",
+		"state": "solid",
+		"color": "00ff00",
+		"periodic_draw": {
+			"x": 192,
+			"y": 16
+		}
+	},
+	"Carbon": {
+		"Z": "006",
+		"state": "solid",
+		"color": "d3d3d3",
+		"periodic_draw": {
+			"x": 208,
+			"y": 16
+		}
+	},
+	"Nitrogen": {
+		"Z": "007",
+		"state": "gas",
+		"color": "87cee6",
+		"periodic_draw": {
+			"x": 224,
+			"y": 16
+		}
+	},
+	"Oxygen": {
+		"Z": "008",
+		"state": "gas",
+		"color": "ff0000",
+		"periodic_draw": {
+			"x": 240,
+			"y": 16
+		}
+	},
+	"Fluorine": {
+		"Z": "009",
+		"state": "gas",
+		"color": "daa520",
+		"periodic_draw": {
+			"x": 256,
+			"y": 16
+		}
+	},
+	"Neon": {
+		"Z": "010",
+		"state": "gas",
+		"color": "ff1493",
+		"periodic_draw": {
+			"x": 272,
+			"y": 16
+		}
+	},
+	"Sodium": {
+		"Z": "011",
+		"state": "solid",
+		"color": "0000ff",
+		"periodic_draw": {
+			"x": 0,
+			"y": 32
+		}
+	},
+	"Magnesium": {
+		"Z": "012",
+		"state": "solid",
+		"color": "228b22",
+		"periodic_draw": {
+			"x": 16,
+			"y": 32
+		}
+	},
+	"Aluminium": {
+		"Z": "013",
+		"state": "solid",
+		"color": "696969",
+		"periodic_draw": {
+			"x": 192,
+			"y": 32
+		}
+	},
+	"Silicon": {
+		"Z": "014",
+		"state": "solid",
+		"color": "f0c8a0",
+		"periodic_draw": {
+			"x": 208,
+			"y": 32
+		}
+	},
+	"Phosphorus": {
+		"Z": "015",
+		"state": "solid",
+		"color": "ffaa00",
+		"periodic_draw": {
+			"x": 224,
+			"y": 32
+		}
+	},
+	"Sulfur": {
+		"Z": "016",
+		"state": "solid",
+		"color": "ffff00",
+		"periodic_draw": {
+			"x": 240,
+			"y": 32
+		}
+	},
+	"Chlorine": {
+		"Z": "017",
+		"state": "gas",
+		"color": "1ff01f",
+		"periodic_draw": {
+			"x": 256,
+			"y": 32
+		}
+	},
+	"Argon": {
+		"Z": "018",
+		"state": "gas",
+		"color": "ff1080",
+		"periodic_draw": {
+			"x": 272,
+			"y": 32
+		}
+	},
+	"Potassium": {
+		"Z": "019",
+		"state": "solid",
+		"color": "ff20a0",
+		"periodic_draw": {
+			"x": 0,
+			"y": 48
+		}
+	},
+	"Calcium": {
+		"Z": "020",
+		"state": "solid",
+		"color": "808592",
+		"periodic_draw": {
+			"x": 16,
+			"y": 48
+		}
+	},
+	"Scandium": {
+		"Z": "021",
+		"state": "solid",
+		"color": "ff05b7",
+		"periodic_draw": {
+			"x": 32,
+			"y": 48
+		}
+	},
+	"Titanium": {
+		"Z": "022",
+		"state": "solid",
+		"color": "bfc2c7",
+		"periodic_draw": {
+			"x": 48,
+			"y": 48
+		}
+	},
+	"Vanadium": {
+		"Z": "023",
+		"state": "solid",
+		"color": "a6a6ab",
+		"periodic_draw": {
+			"x": 64,
+			"y": 48
+		}
+	},
+	"Chromium": {
+		"Z": "024",
+		"state": "solid",
+		"color": "8a99c7",
+		"periodic_draw": {
+			"x": 80,
+			"y": 48
+		}
+	},
+	"Manganese": {
+		"Z": "025",
+		"state": "solid",
+		"color": "9c7ac7",
+		"periodic_draw": {
+			"x": 96,
+			"y": 48
+		}
+	},
+	"Iron": {
+		"Z": "026",
+		"state": "solid",
+		"color": "e86059",
+		"periodic_draw": {
+			"x": 112,
+			"y": 48
+		}
+	},
+	"Cobalt": {
+		"Z": "027",
+		"state": "solid",
+		"color": "7060b0",
+		"periodic_draw": {
+			"x": 128,
+			"y": 48
+		}
+	},
+	"Nickel": {
+		"Z": "028",
+		"state": "solid",
+		"color": "50d050",
+		"periodic_draw": {
+			"x": 144,
+			"y": 48
+		}
+	},
+	"Copper": {
+		"Z": "029",
+		"state": "solid",
+		"color": "c88033",
+		"periodic_draw": {
+			"x": 160,
+			"y": 48
+		}
+	},
+	"Zinc": {
+		"Z": "030",
+		"state": "solid",
+		"color": "482f90",
+		"periodic_draw": {
+			"x": 176,
+			"y": 48
+		}
+	},
+	"Gallium": {
+		"Z": "031",
+		"state": "solid",
+		"color": "c27f6f",
+		"periodic_draw": {
+			"x": 192,
+			"y": 48
+		}
+	},
+	"Germanium": {
+		"Z": "032",
+		"state": "solid",
+		"color": "567f8f",
+		"periodic_draw": {
+			"x": 208,
+			"y": 48
+		}
+	},
+	"Arsenic": {
+		"Z": "033",
+		"state": "solid",
+		"color": "ad50c3",
+		"periodic_draw": {
+			"x": 224,
+			"y": 48
+		}
+	},
+	"Selenium": {
+		"Z": "034",
+		"state": "solid",
+		"color": "efb125",
+		"periodic_draw": {
+			"x": 240,
+			"y": 48
+		}
+	},
+	"Bromine": {
+		"Z": "035",
+		"state": "liquid",
+		"color": "117711",
+		"periodic_draw": {
+			"x": 256,
+			"y": 48
+		}
+	},
+	"Krypton": {
+		"Z": "036",
+		"state": "gas",
+		"color": "5cb8d1",
+		"periodic_draw": {
+			"x": 272,
+			"y": 48
+		}
+	},
+	"Rubidium": {
+		"Z": "037",
+		"state": "solid",
+		"color": "800fc0",
+		"periodic_draw": {
+			"x": 0,
+			"y": 64
+		}
+	},
+	"Strontium": {
+		"Z": "038",
+		"state": "solid",
+		"color": "d55905",
+		"periodic_draw": {
+			"x": 16,
+			"y": 64
+		}
+	},
+	"Yttrium": {
+		"Z": "039",
+		"state": "solid",
+		"color": "a4ffff",
+		"periodic_draw": {
+			"x": 32,
+			"y": 64
+		}
+	},
+	"Zirconium": {
+		"Z": "040",
+		"state": "solid",
+		"color": "94e0c0",
+		"periodic_draw": {
+			"x": 48,
+			"y": 64
+		}
+	},
+	"Niobium": {
+		"Z": "041",
+		"state": "solid",
+		"color": "73b2a9",
+		"periodic_draw": {
+			"x": 64,
+			"y": 64
+		}
+	},
+	"Molybdenum": {
+		"Z": "042",
+		"state": "solid",
+		"color": "54b595",
+		"periodic_draw": {
+			"x": 80,
+			"y": 64
+		}
+	},
+	"Technetium": {
+		"Z": "043",
+		"state": "solid",
+		"color": "0bbe7e",
+		"periodic_draw": {
+			"x": 96,
+			"y": 64
+		}
+	},
+	"Ruthenium": {
+		"Z": "044",
+		"state": "solid",
+		"color": "246f5f",
+		"periodic_draw": {
+			"x": 112,
+			"y": 64
+		}
+	},
+	"Rhodium": {
+		"Z": "045",
+		"state": "solid",
+		"color": "2a5dcc",
+		"periodic_draw": {
+			"x": 128,
+			"y": 64
+		}
+	},
+	"Palladium": {
+		"Z": "046",
+		"state": "solid",
+		"color": "fa5e20",
+		"periodic_draw": {
+			"x": 144,
+			"y": 64
+		}
+	},
+	"Silver": {
+		"Z": "047",
+		"state": "solid",
+		"color": "bbbbcc",
+		"periodic_draw": {
+			"x": 160,
+			"y": 64
+		}
+	},
+	"Cadmium": {
+		"Z": "048",
+		"state": "solid",
+		"color": "ffd98f",
+		"periodic_draw": {
+			"x": 176,
+			"y": 64
+		}
+	},
+	"Indium": {
+		"Z": "049",
+		"state": "solid",
+		"color": "a9787c",
+		"periodic_draw": {
+			"x": 192,
+			"y": 64
+		}
+	},
+	"Tin": {
+		"Z": "050",
+		"state": "solid",
+		"color": "5d9b91",
+		"periodic_draw": {
+			"x": 208,
+			"y": 64
+		}
+	},
+	"Antimony": {
+		"Z": "051",
+		"state": "solid",
+		"color": "8e4fad",
+		"periodic_draw": {
+			"x": 224,
+			"y": 64
+		}
+	},
+	"Tellurium": {
+		"Z": "052",
+		"state": "solid",
+		"color": "b16461",
+		"periodic_draw": {
+			"x": 240,
+			"y": 64
+		}
+	},
+	"Iodine": {
+		"Z": "053",
+		"state": "solid",
+		"color": "024415",
+		"periodic_draw": {
+			"x": 256,
+			"y": 64
+		}
+	},
+	"Xenon": {
+		"Z": "054",
+		"state": "gas",
+		"color": "b5b2ea",
+		"periodic_draw": {
+			"x": 272,
+			"y": 64
+		}
+	},
+	"Caesium": {
+		"Z": "055",
+		"state": "solid",
+		"color": "661b3b",
+		"periodic_draw": {
+			"x": 0,
+			"y": 80
+		}
+	},
+	"Barium": {
+		"Z": "056",
+		"state": "solid",
+		"color": "51660d",
+		"periodic_draw": {
+			"x": 16,
+			"y": 80
+		}
+	},
+	"Lanthanum": {
+		"Z": "057",
+		"state": "solid",
+		"color": "75d4fc",
+		"periodic_draw": {
+			"x": 32,
+			"y": 117
+		}
+	},
+	"Cerium": {
+		"Z": "058",
+		"state": "solid",
+		"color": "ffffc7",
+		"periodic_draw": {
+			"x": 48,
+			"y": 117
+		}
+	},
+	"Praseodymium": {
+		"Z": "059",
+		"state": "solid",
+		"color": "d9ffbd",
+		"periodic_draw": {
+			"x": 64,
+			"y": 117
+		}
+	},
+	"Neodymium": {
+		"Z": "060",
+		"state": "solid",
+		"color": "c7ffbd",
+		"periodic_draw": {
+			"x": 80,
+			"y": 117
+		}
+	},
+	"Promethium": {
+		"Z": "061",
+		"state": "solid",
+		"color": "a3ffbd",
+		"periodic_draw": {
+			"x": 96,
+			"y": 117
+		}
+	},
+	"Samarium": {
+		"Z": "062",
+		"state": "solid",
+		"color": "8fffbd",
+		"periodic_draw": {
+			"x": 112,
+			"y": 117
+		}
+	},
+	"Europium": {
+		"Z": "063",
+		"state": "solid",
+		"color": "61ffbd",
+		"periodic_draw": {
+			"x": 128,
+			"y": 117
+		}
+	},
+	"Gadolinium": {
+		"Z": "064",
+		"state": "solid",
+		"color": "45ffbd",
+		"periodic_draw": {
+			"x": 144,
+			"y": 117
+		}
+	},
+	"Terbium": {
+		"Z": "065",
+		"state": "solid",
+		"color": "30ffbd",
+		"periodic_draw": {
+			"x": 160,
+			"y": 117
+		}
+	},
+	"Dysprosium": {
+		"Z": "066",
+		"state": "solid",
+		"color": "1fffbd",
+		"periodic_draw": {
+			"x": 176,
+			"y": 117
+		}
+	},
+	"Holmium": {
+		"Z": "067",
+		"state": "solid",
+		"color": "00ff92",
+		"periodic_draw": {
+			"x": 192,
+			"y": 117
+		}
+	},
+	"Erbium": {
+		"Z": "068",
+		"state": "solid",
+		"color": "00e66b",
+		"periodic_draw": {
+			"x": 208,
+			"y": 117
+		}
+	},
+	"Thulium": {
+		"Z": "069",
+		"state": "solid",
+		"color": "00d448",
+		"periodic_draw": {
+			"x": 224,
+			"y": 117
+		}
+	},
+	"Ytterbium": {
+		"Z": "070",
+		"state": "solid",
+		"color": "00bf2e",
+		"periodic_draw": {
+			"x": 240,
+			"y": 117
+		}
+	},
+	"Lutetium": {
+		"Z": "071",
+		"state": "solid",
+		"color": "00a81a",
+		"periodic_draw": {
+			"x": 32,
+			"y": 80
+		}
+	},
+	"Hafnium": {
+		"Z": "072",
+		"state": "solid",
+		"color": "4892d6",
+		"periodic_draw": {
+			"x": 48,
+			"y": 80
+		}
+	},
+	"Tantalum": {
+		"Z": "073",
+		"state": "solid",
+		"color": "6751d6",
+		"periodic_draw": {
+			"x": 64,
+			"y": 80
+		}
+	},
+	"Tungsten": {
+		"Z": "074",
+		"state": "solid",
+		"color": "5b37d3",
+		"periodic_draw": {
+			"x": 80,
+			"y": 80
+		}
+	},
+	"Rhenium": {
+		"Z": "075",
+		"state": "solid",
+		"color": "0b74b4",
+		"periodic_draw": {
+			"x": 96,
+			"y": 80
+		}
+	},
+	"Osmium": {
+		"Z": "076",
+		"state": "solid",
+		"color": "085d93",
+		"periodic_draw": {
+			"x": 112,
+			"y": 80
+		}
+	},
+	"Iridium": {
+		"Z": "077",
+		"state": "solid",
+		"color": "0753b2",
+		"periodic_draw": {
+			"x": 128,
+			"y": 80
+		}
+	},
+	"Platinum": {
+		"Z": "078",
+		"state": "solid",
+		"color": "6aa5c9",
+		"periodic_draw": {
+			"x": 144,
+			"y": 80
+		}
+	},
+	"Gold": {
+		"Z": "079",
+		"state": "solid",
+		"color": "ffd930",
+		"periodic_draw": {
+			"x": 160,
+			"y": 80
+		}
+	},
+	"Mercury": {
+		"Z": "080",
+		"state": "liquid",
+		"color": "b8c8d0",
+		"periodic_draw": {
+			"x": 176,
+			"y": 80
+		}
+	},
+	"Thallium": {
+		"Z": "081",
+		"state": "solid",
+		"color": "aa5040",
+		"periodic_draw": {
+			"x": 192,
+			"y": 80
+		}
+	},
+	"Lead": {
+		"Z": "082",
+		"state": "solid",
+		"color": "2b3b6b",
+		"periodic_draw": {
+			"x": 208,
+			"y": 80
+		}
+	},
+	"Bismuth": {
+		"Z": "083",
+		"state": "solid",
+		"color": "833184",
+		"periodic_draw": {
+			"x": 224,
+			"y": 80
+		}
+	},
+	"Polonium": {
+		"Z": "084",
+		"state": "solid",
+		"color": "56ce80",
+		"periodic_draw": {
+			"x": 240,
+			"y": 80
+		}
+	},
+	"Astatine": {
+		"Z": "085",
+		"state": "solid",
+		"color": "1d5b48",
+		"periodic_draw": {
+			"x": 256,
+			"y": 80
+		}
+	},
+	"Radon": {
+		"Z": "086",
+		"state": "gas",
+		"color": "4eaf85",
+		"periodic_draw": {
+			"x": 272,
+			"y": 80
+		}
+	},
+	"Francium": {
+		"Z": "087",
+		"state": "solid",
+		"color": "340159",
+		"periodic_draw": {
+			"x": 0,
+			"y": 96
+		}
+	},
+	"Radium": {
+		"Z": "088",
+		"state": "solid",
+		"color": "206d10",
+		"periodic_draw": {
+			"x": 16,
+			"y": 96
+		}
+	},
+	"Actinium": {
+		"Z": "089",
+		"state": "solid",
+		"color": "70a0fa",
+		"periodic_draw": {
+			"x": 32,
+			"y": 148
+		}
+	},
+	"Thorium": {
+		"Z": "090",
+		"state": "solid",
+		"color": "00afff",
+		"periodic_draw": {
+			"x": 48,
+			"y": 148
+		}
+	},
+	"Protactinium": {
+		"Z": "091",
+		"state": "solid",
+		"color": "0096ff",
+		"periodic_draw": {
+			"x": 64,
+			"y": 148
+		}
+	},
+	"Uranium": {
+		"Z": "092",
+		"state": "solid",
+		"color": "30ff59",
+		"periodic_draw": {
+			"x": 80,
+			"y": 148
+		}
+	},
+	"Neptunium": {
+		"Z": "093",
+		"state": "solid",
+		"color": "12ce1b",
+		"periodic_draw": {
+			"x": 96,
+			"y": 148
+		}
+	},
+	"Plutonium": {
+		"Z": "094",
+		"state": "solid",
+		"color": "0b7c10",
+		"periodic_draw": {
+			"x": 112,
+			"y": 148
+		}
+	},
+	"Americium": {
+		"Z": "095",
+		"state": "solid",
+		"color": "314ac1",
+		"periodic_draw": {
+			"x": 128,
+			"y": 148
+		}
+	},
+	"Curium": {
+		"Z": "096",
+		"state": "solid",
+		"color": "443dc1",
+		"periodic_draw": {
+			"x": 144,
+			"y": 148
+		}
+	},
+	"Berkelium": {
+		"Z": "097",
+		"state": "solid",
+		"color": "5a37be",
+		"periodic_draw": {
+			"x": 160,
+			"y": 148
+		}
+	},
+	"Californium": {
+		"Z": "098",
+		"state": "solid",
+		"color": "512eaa",
+		"periodic_draw": {
+			"x": 176,
+			"y": 148
+		}
+	},
+	"Einsteinium": {
+		"Z": "099",
+		"state": "solid",
+		"color": "51269b",
+		"periodic_draw": {
+			"x": 192,
+			"y": 148
+		}
+	},
+	"Fermium": {
+		"Z": "100",
+		"state": "solid",
+		"color": "5e1c91",
+		"periodic_draw": {
+			"x": 208,
+			"y": 148
+		}
+	},
+	"Mendelevium": {
+		"Z": "101",
+		"state": "solid",
+		"color": "651c87",
+		"periodic_draw": {
+			"x": 224,
+			"y": 148
+		}
+	},
+	"Nobelium": {
+		"Z": "102",
+		"state": "solid",
+		"color": "721c64",
+		"periodic_draw": {
+			"x": 240,
+			"y": 148
+		}
+	},
+	"Lawrencium": {
+		"Z": "103",
+		"state": "solid",
+		"color": "7f0f5f",
+		"periodic_draw": {
+			"x": 32,
+			"y": 96
+		}
+	},
+	"Rutherfordium": {
+		"Z": "104",
+		"state": "solid",
+		"color": "9e115f",
+		"periodic_draw": {
+			"x": 48,
+			"y": 96
+		}
+	},
+	"Dubnium": {
+		"Z": "105",
+		"state": "solid",
+		"color": "960053",
+		"periodic_draw": {
+			"x": 64,
+			"y": 96
+		}
+	},
+	"Seaborgium": {
+		"Z": "106",
+		"state": "solid",
+		"color": "9d0048",
+		"periodic_draw": {
+			"x": 80,
+			"y": 96
+		}
+	},
+	"Bohrium": {
+		"Z": "107",
+		"state": "solid",
+		"color": "9d0030",
+		"periodic_draw": {
+			"x": 96,
+			"y": 96
+		}
+	},
+	"Hassium": {
+		"Z": "108",
+		"state": "solid",
+		"color": "8d001f",
+		"periodic_draw": {
+			"x": 112,
+			"y": 96
+		}
+	},
+	"Meitnerium": {
+		"Z": "109",
+		"state": "solid",
+		"color": "79180a",
+		"periodic_draw": {
+			"x": 128,
+			"y": 96
+		}
+	},
+	"Darmstadtium": {
+		"Z": "110",
+		"state": "solid",
+		"color": "660404",
+		"periodic_draw": {
+			"x": 144,
+			"y": 96
+		}
+	},
+	"Roentgenium": {
+		"Z": "111",
+		"state": "solid",
+		"color": "56081f",
+		"periodic_draw": {
+			"x": 160,
+			"y": 96
+		}
+	},
+	"Copernicium": {
+		"Z": "112",
+		"state": "liquid",
+		"color": "6f352d",
+		"periodic_draw": {
+			"x": 176,
+			"y": 96
+		}
+	},
+	"Nihonium": {
+		"Z": "113",
+		"state": "solid",
+		"color": "917e2b",
+		"periodic_draw": {
+			"x": 192,
+			"y": 96
+		}
+	},
+	"Flerovium": {
+		"Z": "114",
+		"state": "liquid",
+		"color": "457451",
+		"periodic_draw": {
+			"x": 208,
+			"y": 96
+		}
+	},
+	"Moscovium": {
+		"Z": "115",
+		"state": "solid",
+		"color": "ffdbff",
+		"periodic_draw": {
+			"x": 224,
+			"y": 96
+		}
+	},
+	"Livermorium": {
+		"Z": "116",
+		"state": "solid",
+		"color": "acdbc8",
+		"periodic_draw": {
+			"x": 240,
+			"y": 96
+		}
+	},
+	"Tennessine": {
+		"Z": "117",
+		"state": "solid",
+		"color": "bf6190",
+		"periodic_draw": {
+			"x": 256,
+			"y": 96
+		}
+	},
+	"Oganesson": {
+		"Z": "118",
+		"state": "solid",
+		"color": "be4bd3",
+		"periodic_draw": {
+			"x": 272,
+			"y": 96
+		}
+	}
+}
