@@ -1,4 +1,4 @@
-from .core import loadElements, saveElements, PeriodicTableBuilder
+from .core import loadElements, saveElements, PeriodicTableBuilder, elements
 
 class Run:
     def __init__(self):
@@ -18,3 +18,8 @@ class Run:
             if cmd[1] == "periodic":
                 self.period.show()
                 return
+            if cmd[1] == "element":
+                for i in elements:
+                    if cmd[2] == i.name.lower():
+                        i.image.show()
+                        return
