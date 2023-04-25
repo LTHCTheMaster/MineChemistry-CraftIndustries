@@ -1,5 +1,17 @@
 from datargsing import dGlobal_datafiles_manager as GDM
-from .images import Coords, BlankImage, solid_Image, liquid_Image, gas_Image, Image
+from .images import BlankImage, solid_Image, liquid_Image, gas_Image, Image
+
+class Coords:
+    def __init__(self, struct: dict):
+        self.x = struct["x"]
+        self.y = struct["y"]
+    
+    @property
+    def pos(self) -> tuple[int, int]:
+        return (self.x, self.y)
+
+    def __str__(self) -> str:
+        return f"x: {self.x}, y: {self.y}"
 
 class Z:
     def __init__(self, z: str):
@@ -16,8 +28,9 @@ class Element:
         self.state: str = struct["state"]
         self.color: str = struct["color"]
         self.coords: Coords = Coords(struct["periodic_draw"])
+        self.natural_occurence: str = struct["natural_occurence"]
         self.file_name: str = self.z.Z_str + "_" + self.name.lower()
-        self.image: BlankImage = eval(f"{self.state}_Image('{self.color}')")
+        self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
     
     def __str__(self) -> str:
         return f"{self.name.upper()}:\n\tAtomic Number:\n{self.z}\n\tState: {self.state}"

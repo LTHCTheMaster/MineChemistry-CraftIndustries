@@ -6,7 +6,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 0
-		}
+		},
+		"natural_occurence": "primordial"
 	},
 	"Helium": {
 		"Z": "002",
@@ -15,7 +16,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 0
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Lithium": {
 		"Z": "003",
@@ -24,7 +26,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Beryllium": {
 		"Z": "004",
@@ -33,7 +36,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Boron": {
 		"Z": "005",
@@ -42,7 +46,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Carbon": {
 		"Z": "006",
@@ -51,7 +56,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Nitrogen": {
 		"Z": "007",
@@ -60,7 +66,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Oxygen": {
 		"Z": "008",
@@ -69,7 +76,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Fluorine": {
 		"Z": "009",
@@ -78,7 +86,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Neon": {
 		"Z": "010",
@@ -87,7 +96,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 16
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Sodium": {
 		"Z": "011",
@@ -96,7 +106,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Magnesium": {
 		"Z": "012",
@@ -105,7 +116,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Aluminium": {
 		"Z": "013",
@@ -114,7 +126,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Silicon": {
 		"Z": "014",
@@ -123,7 +136,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Phosphorus": {
 		"Z": "015",
@@ -132,7 +146,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Sulfur": {
 		"Z": "016",
@@ -141,7 +156,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Chlorine": {
 		"Z": "017",
@@ -150,7 +166,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Argon": {
 		"Z": "018",
@@ -159,7 +176,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 32
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Potassium": {
 		"Z": "019",
@@ -168,7 +186,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Calcium": {
 		"Z": "020",
@@ -177,7 +196,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Scandium": {
 		"Z": "021",
@@ -186,7 +206,8 @@
 		"periodic_draw": {
 			"x": 32,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Titanium": {
 		"Z": "022",
@@ -195,7 +216,8 @@
 		"periodic_draw": {
 			"x": 48,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Vanadium": {
 		"Z": "023",
@@ -204,7 +226,8 @@
 		"periodic_draw": {
 			"x": 64,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Chromium": {
 		"Z": "024",
@@ -213,7 +236,8 @@
 		"periodic_draw": {
 			"x": 80,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Manganese": {
 		"Z": "025",
@@ -222,7 +246,8 @@
 		"periodic_draw": {
 			"x": 96,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Iron": {
 		"Z": "026",
@@ -231,7 +256,8 @@
 		"periodic_draw": {
 			"x": 112,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Cobalt": {
 		"Z": "027",
@@ -240,7 +266,8 @@
 		"periodic_draw": {
 			"x": 128,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Nickel": {
 		"Z": "028",
@@ -249,7 +276,8 @@
 		"periodic_draw": {
 			"x": 144,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Copper": {
 		"Z": "029",
@@ -258,7 +286,8 @@
 		"periodic_draw": {
 			"x": 160,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Zinc": {
 		"Z": "030",
@@ -267,7 +296,8 @@
 		"periodic_draw": {
 			"x": 176,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Gallium": {
 		"Z": "031",
@@ -276,7 +306,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Germanium": {
 		"Z": "032",
@@ -285,7 +316,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Arsenic": {
 		"Z": "033",
@@ -294,7 +326,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Selenium": {
 		"Z": "034",
@@ -303,7 +336,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Bromine": {
 		"Z": "035",
@@ -312,7 +346,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Krypton": {
 		"Z": "036",
@@ -321,7 +356,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 48
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Rubidium": {
 		"Z": "037",
@@ -330,7 +366,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Strontium": {
 		"Z": "038",
@@ -339,7 +376,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Yttrium": {
 		"Z": "039",
@@ -348,7 +386,8 @@
 		"periodic_draw": {
 			"x": 32,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Zirconium": {
 		"Z": "040",
@@ -357,7 +396,8 @@
 		"periodic_draw": {
 			"x": 48,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Niobium": {
 		"Z": "041",
@@ -366,7 +406,8 @@
 		"periodic_draw": {
 			"x": 64,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Molybdenum": {
 		"Z": "042",
@@ -375,7 +416,8 @@
 		"periodic_draw": {
 			"x": 80,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Technetium": {
 		"Z": "043",
@@ -384,7 +426,8 @@
 		"periodic_draw": {
 			"x": 96,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Ruthenium": {
 		"Z": "044",
@@ -393,7 +436,8 @@
 		"periodic_draw": {
 			"x": 112,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Rhodium": {
 		"Z": "045",
@@ -402,7 +446,8 @@
 		"periodic_draw": {
 			"x": 128,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Palladium": {
 		"Z": "046",
@@ -411,7 +456,8 @@
 		"periodic_draw": {
 			"x": 144,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Silver": {
 		"Z": "047",
@@ -420,7 +466,8 @@
 		"periodic_draw": {
 			"x": 160,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Cadmium": {
 		"Z": "048",
@@ -429,7 +476,8 @@
 		"periodic_draw": {
 			"x": 176,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Indium": {
 		"Z": "049",
@@ -438,7 +486,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Tin": {
 		"Z": "050",
@@ -447,7 +496,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Antimony": {
 		"Z": "051",
@@ -456,7 +506,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Tellurium": {
 		"Z": "052",
@@ -465,7 +516,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Iodine": {
 		"Z": "053",
@@ -474,7 +526,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Xenon": {
 		"Z": "054",
@@ -483,7 +536,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 64
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Caesium": {
 		"Z": "055",
@@ -492,7 +546,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Barium": {
 		"Z": "056",
@@ -501,7 +556,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Lanthanum": {
 		"Z": "057",
@@ -509,8 +565,9 @@
 		"color": "75d4fc",
 		"periodic_draw": {
 			"x": 32,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Cerium": {
 		"Z": "058",
@@ -518,8 +575,9 @@
 		"color": "ffffc7",
 		"periodic_draw": {
 			"x": 48,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Praseodymium": {
 		"Z": "059",
@@ -527,8 +585,9 @@
 		"color": "d9ffbd",
 		"periodic_draw": {
 			"x": 64,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Neodymium": {
 		"Z": "060",
@@ -536,8 +595,9 @@
 		"color": "c7ffbd",
 		"periodic_draw": {
 			"x": 80,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Promethium": {
 		"Z": "061",
@@ -545,8 +605,9 @@
 		"color": "a3ffbd",
 		"periodic_draw": {
 			"x": 96,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "decay"
 	},
 	"Samarium": {
 		"Z": "062",
@@ -554,8 +615,9 @@
 		"color": "8fffbd",
 		"periodic_draw": {
 			"x": 112,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Europium": {
 		"Z": "063",
@@ -563,8 +625,9 @@
 		"color": "61ffbd",
 		"periodic_draw": {
 			"x": 128,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Gadolinium": {
 		"Z": "064",
@@ -572,8 +635,9 @@
 		"color": "45ffbd",
 		"periodic_draw": {
 			"x": 144,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Terbium": {
 		"Z": "065",
@@ -581,8 +645,9 @@
 		"color": "30ffbd",
 		"periodic_draw": {
 			"x": 160,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Dysprosium": {
 		"Z": "066",
@@ -590,8 +655,9 @@
 		"color": "1fffbd",
 		"periodic_draw": {
 			"x": 176,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Holmium": {
 		"Z": "067",
@@ -599,8 +665,9 @@
 		"color": "00ff92",
 		"periodic_draw": {
 			"x": 192,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Erbium": {
 		"Z": "068",
@@ -608,8 +675,9 @@
 		"color": "00e66b",
 		"periodic_draw": {
 			"x": 208,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Thulium": {
 		"Z": "069",
@@ -617,8 +685,9 @@
 		"color": "00d448",
 		"periodic_draw": {
 			"x": 224,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Ytterbium": {
 		"Z": "070",
@@ -626,8 +695,9 @@
 		"color": "00bf2e",
 		"periodic_draw": {
 			"x": 240,
-			"y": 117
-		}
+			"y":115
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Lutetium": {
 		"Z": "071",
@@ -636,7 +706,8 @@
 		"periodic_draw": {
 			"x": 32,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Hafnium": {
 		"Z": "072",
@@ -645,7 +716,8 @@
 		"periodic_draw": {
 			"x": 48,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Tantalum": {
 		"Z": "073",
@@ -654,7 +726,8 @@
 		"periodic_draw": {
 			"x": 64,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Tungsten": {
 		"Z": "074",
@@ -663,7 +736,8 @@
 		"periodic_draw": {
 			"x": 80,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Rhenium": {
 		"Z": "075",
@@ -672,7 +746,8 @@
 		"periodic_draw": {
 			"x": 96,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Osmium": {
 		"Z": "076",
@@ -681,7 +756,8 @@
 		"periodic_draw": {
 			"x": 112,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Iridium": {
 		"Z": "077",
@@ -690,7 +766,8 @@
 		"periodic_draw": {
 			"x": 128,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Platinum": {
 		"Z": "078",
@@ -699,7 +776,8 @@
 		"periodic_draw": {
 			"x": 144,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Gold": {
 		"Z": "079",
@@ -708,7 +786,8 @@
 		"periodic_draw": {
 			"x": 160,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Mercury": {
 		"Z": "080",
@@ -717,7 +796,8 @@
 		"periodic_draw": {
 			"x": 176,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Thallium": {
 		"Z": "081",
@@ -726,7 +806,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Lead": {
 		"Z": "082",
@@ -735,7 +816,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Bismuth": {
 		"Z": "083",
@@ -744,7 +826,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Polonium": {
 		"Z": "084",
@@ -753,7 +836,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Astatine": {
 		"Z": "085",
@@ -762,7 +846,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Radon": {
 		"Z": "086",
@@ -771,7 +856,8 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 80
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Francium": {
 		"Z": "087",
@@ -780,7 +866,8 @@
 		"periodic_draw": {
 			"x": 0,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Radium": {
 		"Z": "088",
@@ -789,7 +876,8 @@
 		"periodic_draw": {
 			"x": 16,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "decay"
 	},
 	"Actinium": {
 		"Z": "089",
@@ -797,8 +885,9 @@
 		"color": "70a0fa",
 		"periodic_draw": {
 			"x": 32,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "decay"
 	},
 	"Thorium": {
 		"Z": "090",
@@ -806,8 +895,9 @@
 		"color": "00afff",
 		"periodic_draw": {
 			"x": 48,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Protactinium": {
 		"Z": "091",
@@ -815,8 +905,9 @@
 		"color": "0096ff",
 		"periodic_draw": {
 			"x": 64,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "decay"
 	},
 	"Uranium": {
 		"Z": "092",
@@ -824,8 +915,9 @@
 		"color": "30ff59",
 		"periodic_draw": {
 			"x": 80,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "primordial"
 	},
 	"Neptunium": {
 		"Z": "093",
@@ -833,8 +925,9 @@
 		"color": "12ce1b",
 		"periodic_draw": {
 			"x": 96,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "decay"
 	},
 	"Plutonium": {
 		"Z": "094",
@@ -842,8 +935,9 @@
 		"color": "0b7c10",
 		"periodic_draw": {
 			"x": 112,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "decay"
 	},
 	"Americium": {
 		"Z": "095",
@@ -851,8 +945,9 @@
 		"color": "314ac1",
 		"periodic_draw": {
 			"x": 128,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Curium": {
 		"Z": "096",
@@ -860,8 +955,9 @@
 		"color": "443dc1",
 		"periodic_draw": {
 			"x": 144,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Berkelium": {
 		"Z": "097",
@@ -869,8 +965,9 @@
 		"color": "5a37be",
 		"periodic_draw": {
 			"x": 160,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Californium": {
 		"Z": "098",
@@ -878,8 +975,9 @@
 		"color": "512eaa",
 		"periodic_draw": {
 			"x": 176,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Einsteinium": {
 		"Z": "099",
@@ -887,8 +985,9 @@
 		"color": "51269b",
 		"periodic_draw": {
 			"x": 192,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Fermium": {
 		"Z": "100",
@@ -896,8 +995,9 @@
 		"color": "5e1c91",
 		"periodic_draw": {
 			"x": 208,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Mendelevium": {
 		"Z": "101",
@@ -905,8 +1005,9 @@
 		"color": "651c87",
 		"periodic_draw": {
 			"x": 224,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Nobelium": {
 		"Z": "102",
@@ -914,8 +1015,9 @@
 		"color": "721c64",
 		"periodic_draw": {
 			"x": 240,
-			"y": 148
-		}
+			"y": 132
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Lawrencium": {
 		"Z": "103",
@@ -924,7 +1026,8 @@
 		"periodic_draw": {
 			"x": 32,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Rutherfordium": {
 		"Z": "104",
@@ -933,7 +1036,8 @@
 		"periodic_draw": {
 			"x": 48,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Dubnium": {
 		"Z": "105",
@@ -942,7 +1046,8 @@
 		"periodic_draw": {
 			"x": 64,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Seaborgium": {
 		"Z": "106",
@@ -951,7 +1056,8 @@
 		"periodic_draw": {
 			"x": 80,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Bohrium": {
 		"Z": "107",
@@ -960,7 +1066,8 @@
 		"periodic_draw": {
 			"x": 96,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Hassium": {
 		"Z": "108",
@@ -969,7 +1076,8 @@
 		"periodic_draw": {
 			"x": 112,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Meitnerium": {
 		"Z": "109",
@@ -978,7 +1086,8 @@
 		"periodic_draw": {
 			"x": 128,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Darmstadtium": {
 		"Z": "110",
@@ -987,7 +1096,8 @@
 		"periodic_draw": {
 			"x": 144,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Roentgenium": {
 		"Z": "111",
@@ -996,7 +1106,8 @@
 		"periodic_draw": {
 			"x": 160,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Copernicium": {
 		"Z": "112",
@@ -1005,7 +1116,8 @@
 		"periodic_draw": {
 			"x": 176,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Nihonium": {
 		"Z": "113",
@@ -1014,7 +1126,8 @@
 		"periodic_draw": {
 			"x": 192,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Flerovium": {
 		"Z": "114",
@@ -1023,7 +1136,8 @@
 		"periodic_draw": {
 			"x": 208,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Moscovium": {
 		"Z": "115",
@@ -1032,7 +1146,8 @@
 		"periodic_draw": {
 			"x": 224,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Livermorium": {
 		"Z": "116",
@@ -1041,7 +1156,8 @@
 		"periodic_draw": {
 			"x": 240,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Tennessine": {
 		"Z": "117",
@@ -1050,7 +1166,8 @@
 		"periodic_draw": {
 			"x": 256,
 			"y": 96
-		}
+		},
+		"natural_occurence":  "synthetic"
 	},
 	"Oganesson": {
 		"Z": "118",
@@ -1059,6 +1176,7 @@
 		"periodic_draw": {
 			"x": 272,
 			"y": 96
-		}
+		},
+		"natural_occurence": "synthetic"
 	}
 }
