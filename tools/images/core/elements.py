@@ -66,5 +66,13 @@ class Tool:
             os.makedirs(path)
         for i in self.elements:
             i.save(path)
+    
+    def exportList(self, path: str):
+        if not os.path.exists(path):
+            os.makedirs(path)
+        tmp = open(path+"/names.txt", "w")
+        for i in self.elements:
+            tmp.write(f"{i.name.lower()}\n")
+        tmp.close()
 
 elements: Tool = Tool()
