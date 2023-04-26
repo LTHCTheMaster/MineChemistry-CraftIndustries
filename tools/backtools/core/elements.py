@@ -39,7 +39,7 @@ class Element:
 	def getDrawStruct(self) -> tuple[Image.Image, Coords]:
 		return (self.image.getImage(), self.coords)
 	def save(self, path: str):
-		self.image.getImage().save(fp=path+"/"+self.file_name+'.png',format="png")
+		self.image.save(path+"/"+self.file_name)
 
 ELEMENT_PATH: str = "tools/data/struct.json"
 
