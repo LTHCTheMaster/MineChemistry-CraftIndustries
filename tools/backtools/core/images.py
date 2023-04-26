@@ -27,7 +27,7 @@ SIZE = (16, 16)
 
 class BlankImage:
 	def __init__(self, color: str, natural_occurence: str):
-		self.image = Image.new("RGBA", SIZE, BLANK_IMAGE)
+		self.image:Image.Image = Image.new("RGBA", SIZE, BLANK_IMAGE)
 		self.color = makeColorTuple(color)
 		self.natural_occurence = natural_occurence
 	
@@ -44,15 +44,15 @@ class BlankImage:
 	def getImage(self) -> Image.Image:
 		return self.image
 	def save(self, path: str):
-		self.image.convert(dither=Image.Dither.NONE, palette=Image.Palette.ADAPTIVE, colors=self.countColor()).save(fp=path+'.png',format="png")
+		self.image.convert(dither=Image.Dither.NONE, palette=Image.Palette.ADAPTIVE, colors=self.countColor()).save(fp=path+'.png',format="png", optimize=True)
 	def countColor(self) -> int:
 		tmp = []
-		w, h = self.image.size
+		h, w = self.image.size
 		for i in range(w):
 			for j in range(h):
 				color = self.image.getpixel((i,j))
 				if color not in tmp:
-					tmp.append(color.copy())
+					tmp.append(color)
 		return len(tmp)
 
 class solid_Image(BlankImage):
