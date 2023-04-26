@@ -24,7 +24,7 @@ def work():
 						for i in elements.elements:
 							if cmd[1] == i.name.lower():
 								print(i)
-				case "cls":
+				case "cls" | "clear":
 					if name == 'nt':
 						system("cls")
 					else:
