@@ -44,16 +44,7 @@ class BlankImage:
 	def getImage(self) -> Image.Image:
 		return self.image
 	def save(self, path: str):
-		self.image.convert(dither=Image.Dither.NONE, palette=Image.Palette.ADAPTIVE, colors=self.countColor()).save(fp=path+'.png',format="png", optimize=True)
-	def countColor(self) -> int:
-		tmp = []
-		h, w = self.image.size
-		for i in range(w):
-			for j in range(h):
-				color = self.image.getpixel((i,j))
-				if color not in tmp:
-					tmp.append(color)
-		return len(tmp)
+		self.image.save(fp=path+'.png',format="png")
 
 class solid_Image(BlankImage):
 	def __init__(self, color: str, natural_occurence: str):
