@@ -8,4 +8,5 @@ if /I "%c%" EQU "Y" goto :startscript
 if /I "%c%" EQU "N" goto :exit
 goto :choice
 :exit
+cls
 @echo on

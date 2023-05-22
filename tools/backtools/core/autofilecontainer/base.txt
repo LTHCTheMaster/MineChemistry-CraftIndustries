@@ -1,0 +1,48 @@
+from PIL import Image
+
+def makeColorTuple(color: str) -> tuple[int, int, int, int]:
+	r, g, b = color[:2], color[2:4], color[4:]
+	red = int(r, 16)
+	green = int(g, 16)
+	blue = int(b, 16)
+	return (red, green, blue, 255)
+
+def colorMixer(maincolor: tuple[int, int, int, int], secondarycolor: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
+	return makeColorDarker((int((maincolor[0]+secondarycolor[0])/2.1), int((maincolor[1]+secondarycolor[1])/2.4), int((maincolor[2]+secondarycolor[2])/2.2), 255))
+
+def makeColorDarker(color: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
+	return (int(color[0]*0.88), int(color[1]*0.85), int(color[2]*0.75), 255)
+
+
+BLACK = (0,0,0,255)
+STOPPER_LIGHT_BLUE = (23,84,135,255)
+NATOCC_DECAY = (45, 236, 67, 255)
+NATOCC_SYNTHETIC = (215, 159, 199, 255)
+STOPPER_LIGHT_BLUE = (23,84,135,255)
+STOPPER_LIGHT_BLUE_DECAY = colorMixer(STOPPER_LIGHT_BLUE, NATOCC_DECAY)
+STOPPER_LIGHT_BLUE_SYNTHETIC = colorMixer(STOPPER_LIGHT_BLUE, NATOCC_SYNTHETIC)
+STOPPER_DARK_BLUE = (10,38,62,255)
+BLANK_IMAGE = (255, 255, 255, 0)
+SIZE = (16, 16)
+
+class BlankImage:
+	def __init__(self, color: str, natural_occurence: str):
+		self.image:Image.Image = Image.new("RGBA", SIZE, BLANK_IMAGE)
+		self.color = makeColorTuple(color)
+		self.natural_occurence = natural_occurence
+		self.draw()
+	
+	def drawBaseForm(self):
+		pass
+	def colorInside(self):
+		pass
+	def draw(self):
+		self.drawBaseForm()
+		self.colorInside()
+	def show(self):
+		tmp = self.image.resize((512,512),Image.Resampling.NEAREST)
+		tmp.show()
+	def getImage(self) -> Image.Image:
+		return self.image
+	def save(self, path: str):
+		self.image.save(fp=path+'.png',format="png")

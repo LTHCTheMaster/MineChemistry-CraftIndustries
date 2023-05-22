@@ -1,5 +1,5 @@
 from datargsing import dGlobal_datafiles_manager as GDM
-from .images import BlankImage, solid_Image, liquid_Image, gas_Image, Image
+from .images import *
 import os
 
 class Coords:
@@ -41,7 +41,7 @@ class Element:
 	def save(self, path: str):
 		self.image.save(path+"/"+self.file_name)
 
-ELEMENT_PATH: str = "tools/data/struct.json"
+ELEMENT_PATH: str = "tools/data/elements.struct"
 
 class Tool:
 	def __init__(self):

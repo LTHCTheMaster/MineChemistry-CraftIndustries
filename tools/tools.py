@@ -10,7 +10,7 @@ def work():
 			match cmd[0]:
 				case "quit" | "exit" | "stop":
 					break
-				case "image":
+				case "image" | "img":
 					img.run(cmd[1:])
 				case "export":
 					elements.exportList(cmd[1])
