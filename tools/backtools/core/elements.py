@@ -1,4 +1,4 @@
-from datargsing import dGlobal_datafiles_manager as GDM
+from datargsing import dGDM as GDM
 from .images import *
 import os
 
