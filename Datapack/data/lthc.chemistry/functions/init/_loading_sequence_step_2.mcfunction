@@ -3,7 +3,7 @@ scoreboard objectives add lthc.chemistry.data dummy
 
 # Check if it is the datapack first run or an update of the datapack
 execute unless score #lthc.chemistry.first_run lthc.chemistry.data matches 1 run function lthc.chemistry:init/_intern/main
-execute if score #lthc.first_run lthc.chemistry.data matches 1 unless score #lthc.chemistry load.status matches 010000 run function lthc.chemistry:init/_intern/update
+execute if score #lthc.chemistry.first_run lthc.chemistry.data matches 1 unless score #lthc.chemistry load.status matches 010000 run function lthc.chemistry:init/_intern/update
 
 # Summon a marker at the worldspawn for something
 execute as @e[type=marker,tag=lthc.chemistry.loading_marker] run function lthc.chemistry:utils/conventions/try_unload
