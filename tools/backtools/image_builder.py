@@ -1,7 +1,7 @@
 from .core import PeriodicTableBuilder, elements
 from datargsing import dGDM as GDM
 
-FIXED_PATH_RP = ["Resourcepack/assets/lthc.chemistry/models/elements/", "Resourcepack/assets/lthc.chemistry/textures/block/elements/", "Resourcepack/assets/minecraft/models/item/repeating_command_block.json"]
+FIXED_PATH: tuple[str] = ["Resourcepack/assets/lthc.chemistry/models/elements/", "Resourcepack/assets/lthc.chemistry/textures/block/elements/", "Resourcepack/assets/minecraft/models/item/repeating_command_block.json"]
 
 class Run:
 	def __init__(self):
@@ -41,11 +41,11 @@ class Run:
 				self.reload()
 			case "rp":
 				pred = []
-				elements.saveElements(FIXED_PATH_RP[1])
+				elements.saveElements(FIXED_PATH[1])
 				for j, i in enumerate(elements.elements):
-					self.gdm.set_to_json(FIXED_PATH_RP[0] + i.file_name + '.json', {"parent": "item/generated","textures": {"layer0": f"lthc.chemistry:block/elements/{i.file_name}"}}, True)
+					self.gdm.set_to_json(FIXED_PATH[0] + i.file_name + '.json', {"parent": "item/generated","textures": {"layer0": f"lthc.chemistry:block/elements/{i.file_name}"}}, True)
 					pred.append({"predicate": {"custom_model_data": 170000 + j},"model": "lthc.chemistry:elements/" + i.file_name})
-				self.gdm.set_to_json(FIXED_PATH_RP[2], {"parent": "minecraft:block/repeating_command_block","overrides": [i for i in pred]}, True)
+				self.gdm.set_to_json(FIXED_PATH[2], {"parent": "minecraft:block/repeating_command_block","overrides": [i for i in pred]}, True)
 			case _:
 				pass
 	

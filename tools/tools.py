@@ -1,9 +1,10 @@
-from backtools import Run as RunIMG
+from backtools import IMGRun, REGRun
 from backtools.core import elements
 from os import system, name
 
 def work():
-	img = RunIMG()
+	img = IMGRun()
+	reg = REGRun()
 	while True:
 		try:
 			cmd = input("tools :\t").split(" ")
@@ -12,6 +13,8 @@ def work():
 					break
 				case "image" | "img":
 					img.run(cmd[1:])
+				case "register" | "reg":
+					reg.run(cmd[1:])
 				case "export":
 					elements.exportList(cmd[1])
 				case "print":
