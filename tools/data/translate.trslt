@@ -1,4 +1,4 @@
-#en {
+#en_us {
 	"lore": {
 		"tooltip" : "MineChemistry CraftIndustries"
 	},
@@ -125,7 +125,7 @@
 		}
 	}
 }
-#fr {
+#fr_fr {
 	"items": {
 		"elements": {
 			"hydrogen": "Hydrogène",
