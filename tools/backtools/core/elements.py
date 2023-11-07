@@ -32,14 +32,19 @@ class Element:
 		self.natural_occurence: str = struct["natural_occurence"]
 		self.file_name: str = self.z.Z_str + "_" + self.name.lower()
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
+		self.ingot_image: IngotTextureImage | None = None
+		if self.state == "solid" and self.name not in ("Iron", "Copper", "Gold"):
+			self.ingot_image = IngotTextureImage(self.color)
 	
 	def __str__(self) -> str:
 		return f"{self.name.upper()}:\n\tAtomic Number:\n{self.z}\n\tState: {self.state.capitalize()}\n\tNatural Occurence: {self.natural_occurence.capitalize()}"
 
-	def getDrawStruct(self) -> tuple[Image.Image, Coords]:
-		return (self.image.getImage(), self.coords)
+	def getDrawStruct(self) -> tuple[Image.Image, Image.Image | None, Coords]:
+		return (self.image.getImage(), self.ingot_image.getImage() if isinstance(self.ingot_image, IngotTextureImage) else None, self.coords)
 	def save(self, path: str):
 		self.image.save(path+"/"+self.file_name)
+		if isinstance(self.ingot_image, IngotTextureImage):
+			self.image.save(path+"ingot/"+self.file_name)
 
 ELEMENT_PATH: str = "tools/data/elements.struct"
 
@@ -64,6 +69,8 @@ class Tool:
 	def saveElements(self, path: str):
 		if not os.path.exists(path):
 			os.makedirs(path)
+		if not os.path.exists(path+"ingot"):
+			os.makedirs(path+"ingot")
 		for i in self.elements:
 			i.save(path)
 	

@@ -37,3 +37,55 @@ tmpfile.close()
 file.close()
 
 from .autofilecontainer.images import *
+
+###############################################
+
+PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0),
+	makeColorTuple("727272"),
+	makeColorTuple("3B3B3B"),
+	makeColorTuple("D1D1D1"),
+	makeColorTuple("B0B0B0"),
+	makeColorTuple("9C9C9C"),
+	makeColorTuple("E6E6E6"),
+	makeColorTuple("FAFAFA"),
+	makeColorTuple("FFFFFF")
+)
+
+INGOT: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 3, 3, 1, 0, 0, 0),
+	(0, 0, 0, 0, 1, 1, 1, 6, 6, 6, 6, 6, 6, 1, 0, 0),
+	(0, 1, 1, 1, 3, 6, 6, 6, 6, 6, 6, 6, 6, 3, 2, 0),
+	(1, 7, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 6, 2),
+	(1, 3, 7, 6, 6, 6, 6, 6, 6, 7, 7, 7, 6, 5, 3, 2),
+	(1, 3, 6, 7, 6, 6, 7, 7, 7, 6, 4, 5, 5, 5, 3, 2),
+	(1, 3, 6, 3, 8, 7, 6, 4, 5, 5, 5, 5, 4, 3, 3, 2),
+	(1, 4, 6, 3, 6, 4, 5, 5, 5, 5, 4, 3, 3, 2, 2, 0),
+	(0, 1, 4, 3, 6, 4, 5, 5, 4, 4, 2, 2, 2, 0, 0, 0),
+	(0, 0, 1, 4, 3, 4, 4, 2, 2, 2, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+def colorEditionIngot(color: tuple[int, int, int, int], palette_index: int) -> tuple[int, int, int, int]:
+	if i == 0: return (0, 0, 0, 0)
+	return (round(color[0] * 0.651 + PALETTE_INGOT[palette_index][0] * 0.349), round(color[1] * 0.6509 + PALETTE_INGOT[palette_index][1] * 0.3491), round(color[2] * 0.649 + PALETTE_INGOT[palette_index][2] * 0.351), 255)
+
+class ItemTextureImage(PureBaseImage):
+	def __init__(self, color: str):
+		super().__init__(color)
+		self.draw()
+
+class IngotTextureImage(ItemTextureImage):
+	def __init__(self, color: str):
+		super().__init__(color)
+
+	def draw(self):
+		for y, line in enumerate(INGOT):
+			for x, index in enumerate(line):
+				if index == 0: continue
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index))

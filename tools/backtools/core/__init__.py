@@ -20,3 +20,7 @@ del STOPPER_LIGHT_BLUE_SYNTHETIC
 del STOPPER_DARK_BLUE
 del BLANK_IMAGE
 del SIZE
+del Image
+del PALETTE_INGOT
+del INGOT
+del colorEditionIngot

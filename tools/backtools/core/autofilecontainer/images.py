@@ -24,10 +24,25 @@ STOPPER_DARK_BLUE = (10,38,62,255)
 BLANK_IMAGE = (255, 255, 255, 0)
 SIZE = (16, 16)
 
-class BlankImage:
-	def __init__(self, color: str, natural_occurence: str):
+class PureBaseImage:
+	def __init__(self, color: str):
 		self.image:Image.Image = Image.new("RGBA", SIZE, BLANK_IMAGE)
-		self.color = makeColorTuple(color)
+		self.color: tuple[int, int, int, int] = makeColorTuple(color)
+	
+	def show(self):
+		tmp = self.image.resize((512,512),Image.Resampling.NEAREST)
+		tmp.show()
+	def getImage(self) -> Image.Image:
+		return self.image
+	def save(self, path: str):
+		self.image.save(fp=path+'.png',format="png")
+	
+	def draw(self):
+		pass
+
+class BlankImage(PureBaseImage):
+	def __init__(self, color: str, natural_occurence: str):
+		super().__init__(color)
 		self.natural_occurence = natural_occurence
 		self.draw()
 	
@@ -38,13 +53,6 @@ class BlankImage:
 	def draw(self):
 		self.drawBaseForm()
 		self.colorInside()
-	def show(self):
-		tmp = self.image.resize((512,512),Image.Resampling.NEAREST)
-		tmp.show()
-	def getImage(self) -> Image.Image:
-		return self.image
-	def save(self, path: str):
-		self.image.save(fp=path+'.png',format="png")
 class gas_Image(BlankImage):
 	def __init__(self, color: str, natural_occurence: str):
 		super().__init__(color, natural_occurence)
