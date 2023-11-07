@@ -16,5 +16,8 @@
     "editor.detectIndentation": true,
 	"files.associations": {
 		"base.txt": "python"
-	}
+	},
+	"datapack.env.detectionDepth": 2,
+	"datapack.env.cmdVersion": "1.20.2",
+	"datapack.env.dataVersion": "1.20.2"
 }
