@@ -44,7 +44,7 @@ class Element:
 	def save(self, path: str):
 		self.image.save(path+"/"+self.file_name)
 		if isinstance(self.ingot_image, IngotTextureImage):
-			self.image.save(path+"ingot/"+self.file_name)
+			self.ingot_image.save(path+"ingot/"+self.file_name)
 
 ELEMENT_PATH: str = "tools/data/elements.struct"
 
