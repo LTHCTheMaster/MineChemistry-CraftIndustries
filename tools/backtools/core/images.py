@@ -41,15 +41,15 @@ from .autofilecontainer.images import *
 ###############################################
 
 PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
-	(0, 0, 0, 0),
-	makeColorTuple("727272"),
-	makeColorTuple("3B3B3B"),
-	makeColorTuple("D1D1D1"),
-	makeColorTuple("B0B0B0"),
-	makeColorTuple("9C9C9C"),
-	makeColorTuple("E6E6E6"),
-	makeColorTuple("FAFAFA"),
-	makeColorTuple("FFFFFF")
+	(0, 0, 0, 0), # Transparent
+	makeColorTuple("6A"*3), # Border Top
+	makeColorTuple("33"*3), # Border Bottom
+	makeColorTuple("CF"*3),
+	makeColorTuple("AE"*3),
+	makeColorTuple("9A"*3),
+	makeColorTuple("E4"*3),
+	makeColorTuple("FA"*3), # Edges
+	makeColorTuple("FF"*3), # Corner
 )
 
 INGOT: tuple[tuple[int]] = (
@@ -88,4 +88,4 @@ class IngotTextureImage(ItemTextureImage):
 		for y, line in enumerate(INGOT):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionIngot(self.color, index))
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index), index))
