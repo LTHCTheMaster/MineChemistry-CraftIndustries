@@ -15,7 +15,6 @@ def makeColorDarker(color: tuple[int, int, int, int]) -> tuple[int, int, int, in
 
 
 BLACK = (0,0,0,255)
-STOPPER_LIGHT_BLUE = (23,84,135,255)
 NATOCC_DECAY = (45, 236, 67, 255)
 NATOCC_SYNTHETIC = (215, 159, 199, 255)
 STOPPER_LIGHT_BLUE = (23,84,135,255)
