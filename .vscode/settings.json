@@ -1,8 +1,20 @@
 {
 	"files.exclude": {
-		"**/desktop.ini": true
+		"**/desktop.ini": true,
+		"Datapack/data/load": true,
+		"Datapack/data/minecraft/tags/functions/load.json": true,
+		"temp/.gitkeep": true,
+		"**/__pycache__": true,
+		"**/*.bat": true,
+		".github": true,
+		"periodicBuildTest": true,
+		"exportTest": true,
+		"elementsBuildTest": true
 	},
 	"editor.insertSpaces": false,
     "editor.tabSize": 4,
-    "editor.detectIndentation": true
+    "editor.detectIndentation": true,
+	"files.associations": {
+		"base.txt": "python"
+	}
 }
