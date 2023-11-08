@@ -23,6 +23,6 @@ for i in range(len(langs)):
 			else:
 				for l in contents[i][j][k]:
 					core["lthcthemaster.lthc.chemistry." + j + '.' + k + '.' + l] = contents[i][j][k][l]
-	gdm.set_to_json(FIXED_PATH + langs[i] + '.json', core, True)
+	gdm.set_to_json(FIXED_PATH + langs[i] + '.json', core, False)
 
 ghfedhbjhrruyghruuytgeutyetdyhtueuhgufytyru: bool = False

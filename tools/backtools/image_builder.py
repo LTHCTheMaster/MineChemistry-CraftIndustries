@@ -41,10 +41,17 @@ class Run:
 				self.reload()
 			case "rp":
 				pred = []
+				pred2 = []
+				to_add = 0
 				elements.saveElements(FIXED_PATH[1])
 				for j, i in enumerate(elements.elements):
 					self.gdm.set_to_json(FIXED_PATH[0] + i.file_name + '.json', {"parent": "item/generated","textures": {"layer0": f"lthc.chemistry:block/elements/{i.file_name}"}}, False)
 					pred.append({"predicate": {"custom_model_data": 170000 + j},"model": "lthc.chemistry:elements/" + i.file_name})
+					if i.state == "solid" and i.name not in ("Iron", "Copper", "Gold"):
+						self.gdm.set_to_json(FIXED_PATH[0] + 'ingot/' + i.file_name + '.json', {"parent": "item/generated","textures": {"layer0": f"lthc.chemistry:block/elements/ingot/{i.file_name}"}}, False)
+						pred2.append({"predicate": {"custom_model_data": 170118 + to_add},"model": "lthc.chemistry:elements/ingot/" + i.file_name})
+						to_add += 1
+				pred.extend(pred2)
 				self.gdm.set_to_json(FIXED_PATH[2], {"parent": "minecraft:block/repeating_command_block","overrides": [i for i in pred]}, False)
 			case _:
 				pass
