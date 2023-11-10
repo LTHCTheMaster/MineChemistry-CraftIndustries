@@ -1,4 +1,4 @@
 __pycache__/
 desktop.ini
 work/
-tools/data/vanilla/
+tools/data/*/*.png
