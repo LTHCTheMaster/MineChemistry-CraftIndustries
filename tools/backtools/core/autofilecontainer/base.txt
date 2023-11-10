@@ -1,5 +1,6 @@
 from PIL import Image
 
+# Don't Check, it's just some strange things here
 def makeColorTuple(color: str) -> tuple[int, int, int, int]:
 	r, g, b = color[:2], color[2:4], color[4:]
 	red = int(r, 16)
@@ -12,8 +13,9 @@ def colorMixer(maincolor: tuple[int, int, int, int], secondarycolor: tuple[int, 
 
 def makeColorDarker(color: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
 	return (int(color[0]*0.88), int(color[1]*0.85), int(color[2]*0.75), 255)
+#End of strange things
 
-
+# Constants
 BLACK = (0,0,0,255)
 NATOCC_DECAY = (45, 236, 67, 255)
 NATOCC_SYNTHETIC = (215, 159, 199, 255)
@@ -23,14 +25,16 @@ STOPPER_LIGHT_BLUE_SYNTHETIC = colorMixer(STOPPER_LIGHT_BLUE, NATOCC_SYNTHETIC)
 STOPPER_DARK_BLUE = (10,38,62,255)
 BLANK_IMAGE = (255, 255, 255, 0)
 SIZE = (16, 16)
+RESCALING_SIZE = (SIZE[0] * 32, SIZE[1] * 32)
 
+# Common to all textures ?
 class PureBaseImage:
 	def __init__(self, color: str):
 		self.image:Image.Image = Image.new("RGBA", SIZE, BLANK_IMAGE)
 		self.color: tuple[int, int, int, int] = makeColorTuple(color)
 	
 	def show(self):
-		tmp = self.image.resize((512,512),Image.Resampling.NEAREST)
+		tmp = self.image.resize(RESCALING_SIZE, Image.Resampling.NEAREST)
 		tmp.show()
 	def getImage(self) -> Image.Image:
 		return self.image
@@ -40,6 +44,7 @@ class PureBaseImage:
 	def draw(self):
 		pass
 
+# Element Texture Base
 class BlankImage(PureBaseImage):
 	def __init__(self, color: str, natural_occurence: str):
 		super().__init__(color)

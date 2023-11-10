@@ -2,6 +2,7 @@ from .images import *
 from datargsing import dGDM as GDM
 import os
 
+# Simple (x, y) system
 class Coords:
 	def __init__(self, struct: dict):
 		self.x = struct["x"]
@@ -14,6 +15,7 @@ class Coords:
 	def __str__(self) -> str:
 		return f"x: {self.x}, y: {self.y}"
 
+# Number of protons
 class Z:
 	def __init__(self, z: str):
 		self.Z_str = z
@@ -22,6 +24,7 @@ class Z:
 	def __str__(self) -> str:
 		return f"\t\tfixed size format: {self.Z_str}\n\t\tnumber format: {self.Z_int}"
 
+# It's an element. Yes!
 class Element:
 	def __init__(self, name: str, struct: dict):
 		self.name: str = name
@@ -41,13 +44,20 @@ class Element:
 
 	def getDrawStruct(self) -> tuple[Image.Image, Image.Image | None, Coords]:
 		return (self.image.getImage(), self.ingot_image.getImage() if isinstance(self.ingot_image, IngotTextureImage) else None, self.coords)
+
 	def save(self, path: str):
 		self.image.save(path+"/"+self.file_name)
 		if isinstance(self.ingot_image, IngotTextureImage):
 			self.ingot_image.save(path+"ingot/"+self.file_name)
 
+# A constant here ?
 ELEMENT_PATH: str = "tools/data/elements.struct"
 
+# The name is transparent
+# But ican explain a lttle bit more:
+# you can (re)load elements from the data, print the whole list of elements,
+# save (export a file) all image somewhere on your computer
+# or just export the names of all elements
 class Tool:
 	def __init__(self):
 		self.elements: list[Element] = []

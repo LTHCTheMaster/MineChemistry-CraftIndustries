@@ -1,6 +1,7 @@
 from .images import *
 from .elements import elements
 from .periodic import PeriodicTableBuilder
+# Remove useless things after importing * from .images because of "runtime" generated class that cannot be simply imported
 del filecutter
 del define_drawBaseForm
 del define_colorInside

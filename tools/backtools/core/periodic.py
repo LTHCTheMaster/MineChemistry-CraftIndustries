@@ -1,10 +1,12 @@
 from .elements import Tool, Image
 import os
 
-BLANK_PERIOD = (181, 159, 119, 255)
-SIZE = (288, 148)
-RESCALED_SIZE = (1440, 740)
+# Constants
+BLANK_PERIOD = (181, 159, 119, 255) # RGBA Color
+SIZE = (288, 148)           # Don't touch
+RESCALED_SIZE = (1440, 740) # Don't touch
 
+# Used to build a periodic table image
 class PeriodicTableBuilder:
 	def __init__(self, elements: Tool):
 		self.image = Image.new("RGBA", SIZE, BLANK_PERIOD)

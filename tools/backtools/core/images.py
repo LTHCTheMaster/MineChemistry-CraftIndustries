@@ -1,5 +1,7 @@
 from os import listdir
 
+# A lot of strange things to automatically define class and drawings usable for state value of elements,
+# Usefull to quickly edit a state "representation", you just need to restart the program
 POS_FILE_PATH = "tools/data/elements"
 AFCIMGPATH = "tools/backtools/core/autofilecontainer/"
 
@@ -37,9 +39,13 @@ tmpfile.close()
 file.close()
 
 from .autofilecontainer.images import *
+# End of a lot of strange things
 
-###############################################
+############################################################""""
 
+# Other Textures
+
+# Ingot
 PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0), # Transparent
 	makeColorTuple("6A"*3), # Border Top
@@ -89,3 +95,6 @@ class IngotTextureImage(ItemTextureImage):
 			for x, index in enumerate(line):
 				if index == 0: continue
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index), index))
+# End of Ingot
+
+# End of Other Textures
