@@ -100,13 +100,14 @@ class IngotTextureImage(ItemTextureImage):
 # Dust
 PALETTE_DUST: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0), # Transparent
-	makeColorTuple("30"*3), # Border Top
+	makeColorTuple("1E"*3), # Border Top
 	makeColorTuple("0C"*3), # Border Bottom
 	makeColorTuple("61"*3),
 	makeColorTuple("70"*3),
 	makeColorTuple("3C"*3),
 	makeColorTuple("2D"*3),
-	makeColorTuple("23"*3)
+	makeColorTuple("23"*3),
+	makeColorTuple("30"*3)
 )
 
 DUST: tuple[tuple[int]] = (
@@ -117,19 +118,20 @@ DUST: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 0, 1, 5, 3, 1, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 1, 3, 4, 3, 6, 2, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 1, 3, 4, 3, 5, 4, 6, 2, 0, 0, 0, 0),
-	(0, 0, 0, 1, 3, 3, 3, 4, 3, 6, 1, 6, 2, 0, 0, 0),
+	(0, 0, 0, 1, 3, 3, 3, 4, 3, 6, 8, 6, 2, 0, 0, 0),
 	(0, 0, 1, 5, 4, 3, 5, 6, 4, 5, 6, 3, 7, 2, 0, 0),
-	(0, 0, 1, 3, 5, 3, 4, 3, 5, 6, 6, 1, 6, 2, 0, 0),
+	(0, 0, 1, 3, 5, 3, 4, 3, 5, 6, 6, 8, 6, 2, 0, 0),
 	(0, 0, 2, 6, 3, 4, 3, 5, 6, 3, 6, 6, 7, 2, 0, 0),
-	(0, 0, 0, 2, 6, 3, 5, 6, 1, 6, 6, 7, 2, 0, 0, 0),
+	(0, 0, 0, 2, 6, 3, 5, 6, 8, 6, 6, 7, 2, 0, 0, 0),
 	(0, 0, 0, 0, 2, 2, 7, 6, 6, 7, 2, 2, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 )
+
 def colorEditionDust(color: tuple[int, int, int, int], palette_index: int) -> tuple[int, int, int, int]:
 	if i == 0: return (0, 0, 0, 0)
-	return (round(color[0] * 0.651 + PALETTE_DUST[palette_index][0] * 0.349), round(color[1] * 0.6509 + PALETTE_DUST[palette_index][1] * 0.3491), round(color[2] * 0.649 + PALETTE_DUST[palette_index][2] * 0.351), 255)
+	return (round(color[0] * 0.652 + PALETTE_DUST[palette_index][0] * 0.348), round(color[1] * 0.6509 + PALETTE_DUST[palette_index][1] * 0.3491), round(color[2] * 0.65 + PALETTE_DUST[palette_index][2] * 0.35), 255)
 
 class DustTextureImage(ItemTextureImage):
 	def __init__(self, color: str):
@@ -139,7 +141,7 @@ class DustTextureImage(ItemTextureImage):
 		for y, line in enumerate(DUST):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionDust(self.color, index))
+				self.image.putpixel((x, y), colorEditionDust(self.color, index)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index), index))
 # End of Dust
 
 # End of Other Textures
@@ -148,7 +150,13 @@ class DustTextureImage(ItemTextureImage):
 
 # Test Area
 
-test = DustTextureImage("ffff00")
-test.show()
+# test = DustTextureImage("ffff00")
+# test.show()
+
+# test = DustTextureImage("4892d6")
+# test.show()
+
+# test = DustTextureImage("a82f2a")
+# test.show()
 
 # End of Test Area
