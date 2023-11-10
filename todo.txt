@@ -1,2 +1,4 @@
 add a new type of data for "solid" state component: solid """shape""" => "ingot" (default) | "dust"
 add color overrides for some elements for their solid """shape""" (to avoid a non sufficiently dark carbon dust for example)
+add an "exclude" flag to not generate some typesof textures for some elements
+add a "source path" to import "external" images on the periodic table of items (currently: ingot)
