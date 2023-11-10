@@ -15,7 +15,11 @@
     "editor.tabSize": 4,
     "editor.detectIndentation": true,
 	"files.associations": {
-		"base.txt": "python"
+		"base.txt": "python",
+		"*.struct": "json",
+		"*.pos": "log",
+		"*.trslt": "fsharp",
+		"linker.txt": "bat"
 	},
 	"datapack.env.detectionDepth": 2,
 	"datapack.env.cmdVersion": "1.20.2",
