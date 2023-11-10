@@ -139,7 +139,7 @@ class DustTextureImage(ItemTextureImage):
 		for y, line in enumerate(DUST):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionDust(self.color, index)) if index not in (6, 7) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index), index))
+				self.image.putpixel((x, y), colorEditionDust(self.color, index)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index), index))
 # End of Dust
 
 # End of Other Textures
