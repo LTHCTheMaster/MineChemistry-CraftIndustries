@@ -52,6 +52,7 @@
 	"Carbon": {
 		"Z": "006",
 		"state": "solid",
+		"shape": "dust",
 		"color": "d3d3d3",
 		"periodic_draw": {
 			"x": 208,
@@ -152,6 +153,7 @@
 	"Sulfur": {
 		"Z": "016",
 		"state": "solid",
+		"shape": "dust",
 		"color": "ffff00",
 		"periodic_draw": {
 			"x": 240,
@@ -252,6 +254,8 @@
 	"Iron": {
 		"Z": "026",
 		"state": "solid",
+		"shape": "external",
+		"path": "external:iron",
 		"color": "e86059",
 		"periodic_draw": {
 			"x": 112,
@@ -282,6 +286,8 @@
 	"Copper": {
 		"Z": "029",
 		"state": "solid",
+		"shape": "external",
+		"path": "external:copper",
 		"color": "c88033",
 		"periodic_draw": {
 			"x": 160,
@@ -322,6 +328,7 @@
 	"Arsenic": {
 		"Z": "033",
 		"state": "solid",
+		"shape": "dust",
 		"color": "ad50c3",
 		"periodic_draw": {
 			"x": 224,
@@ -782,6 +789,8 @@
 	"Gold": {
 		"Z": "079",
 		"state": "solid",
+		"shape": "external",
+		"path": "external:gold",
 		"color": "ffd930",
 		"periodic_draw": {
 			"x": 160,
