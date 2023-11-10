@@ -1,0 +1,2 @@
+add a new type of data for "solid" state component: solid """shape""" => "ingot" (default) | "dust"
+add color overrides for some elements for their solid """shape""" (to avoid a non sufficiently dark carbon dust for example)
