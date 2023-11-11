@@ -21,7 +21,11 @@ class PeriodicTableBuilder:
 			if isinstance(ingotimg, Image.Image):
 				self.ingot_image.paste(ingotimg, coords.pos, ingotimg)
 	
-	def show(self):
+	def show(self, cmd: list[str]):
+		if cmd[0] == "ingot":
+			tmp = self.ingot_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
+			tmp.show()
+			return
 		tmp = self.image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
 		tmp.show()
 	

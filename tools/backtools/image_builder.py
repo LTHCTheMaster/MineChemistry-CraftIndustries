@@ -21,7 +21,10 @@ class Run:
 			case "show":
 				match cmd[1]:
 					case "periodic":
-						self.period.show()
+						try:
+							self.period.show(cmd[2:])
+						except:
+							self.period.show(["base_table"])
 					case "element":
 						try:
 							tmp = int(cmd[2])

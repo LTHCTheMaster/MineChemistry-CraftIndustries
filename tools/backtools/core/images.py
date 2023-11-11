@@ -55,10 +55,10 @@ PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0), # Transparent
 	makeColorTuple("6A"*3), # Border Top
 	makeColorTuple("33"*3), # Border Bottom
-	makeColorTuple("CF"*3),
-	makeColorTuple("AE"*3),
-	makeColorTuple("9A"*3),
-	makeColorTuple("E4"*3),
+	makeColorTuple("CC"*3),
+	makeColorTuple("AB"*3),
+	makeColorTuple("97"*3),
+	makeColorTuple("E1"*3),
 	makeColorTuple("FA"*3), # Edges
 	makeColorTuple("FF"*3), # Corner
 )
