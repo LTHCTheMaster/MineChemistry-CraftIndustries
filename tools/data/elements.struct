@@ -42,6 +42,7 @@
 	"Boron": {
 		"Z": "005",
 		"state": "solid",
+		"shape": "dust",
 		"color": "00ff00",
 		"periodic_draw": {
 			"x": 192,
@@ -103,6 +104,7 @@
 	"Sodium": {
 		"Z": "011",
 		"state": "solid",
+		"shape": "dust",
 		"color": "0000ff",
 		"periodic_draw": {
 			"x": 0,
@@ -133,6 +135,7 @@
 	"Silicon": {
 		"Z": "014",
 		"state": "solid",
+		"shape": "dust",
 		"color": "f0c8a0",
 		"periodic_draw": {
 			"x": 208,
@@ -143,6 +146,7 @@
 	"Phosphorus": {
 		"Z": "015",
 		"state": "solid",
+		"shape": "dust",
 		"color": "ffaa00",
 		"periodic_draw": {
 			"x": 224,
@@ -341,6 +345,7 @@
 	"Selenium": {
 		"Z": "034",
 		"state": "solid",
+		"shape": "dust",
 		"color": "efb125",
 		"periodic_draw": {
 			"x": 240,
@@ -371,6 +376,7 @@
 	"Rubidium": {
 		"Z": "037",
 		"state": "solid",
+		"shape": "dust",
 		"color": "800fc0",
 		"periodic_draw": {
 			"x": 0,
@@ -381,6 +387,7 @@
 	"Strontium": {
 		"Z": "038",
 		"state": "solid",
+		"shape": "dust",
 		"color": "d55905",
 		"periodic_draw": {
 			"x": 16,
@@ -431,6 +438,7 @@
 	"Technetium": {
 		"Z": "043",
 		"state": "solid",
+		"shape": "dust",
 		"color": "0bbe7e",
 		"periodic_draw": {
 			"x": 96,
@@ -533,6 +541,7 @@
 	"Iodine": {
 		"Z": "053",
 		"state": "solid",
+		"shape": "dust",
 		"color": "024415",
 		"periodic_draw": {
 			"x": 256,
