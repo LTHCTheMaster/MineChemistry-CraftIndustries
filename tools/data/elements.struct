@@ -256,6 +256,7 @@
 		"state": "solid",
 		"shape": "external",
 		"path": "vanilla:iron",
+		"exclude_not_elements_from_export": true,
 		"color": "e86059",
 		"periodic_draw": {
 			"x": 112,
@@ -288,6 +289,7 @@
 		"state": "solid",
 		"shape": "external",
 		"path": "vanilla:copper",
+		"exclude_not_elements_from_export": true,
 		"color": "c88033",
 		"periodic_draw": {
 			"x": 160,
@@ -793,6 +795,7 @@
 		"state": "solid",
 		"shape": "external",
 		"path": "vanilla:gold",
+		"exclude_not_elements_from_export": true,
 		"color": "ffd930",
 		"periodic_draw": {
 			"x": 160,

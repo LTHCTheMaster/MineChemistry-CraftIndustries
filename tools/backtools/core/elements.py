@@ -58,6 +58,10 @@ class Element:
 					self.fallback()
 			else:
 				self.fallback()
+		if "exclude_not_elements_from_export" in struct:
+			self.exclude: bool = struct["exclude_not_elements_from_export"]
+		else:
+			self.exclude: bool = False
 	
 	def fallback(self):
 		self.shape: str = "ingot"
@@ -75,10 +79,11 @@ class Element:
 	def save(self, path: str):
 		self.image.save(path+"/"+self.file_name)
 		if self.state == "solid":
-			if isinstance(self.ingot_image, (IngotTextureImage, DustTextureImage)):
-				self.ingot_image.save(path+self.shape+"/"+self.file_name)
-			else:
-				self.ingot_image.save(fp=path+"imported/"+self.file_name+'.png',format="png")
+			if not self.exclude:
+				if isinstance(self.ingot_image, (IngotTextureImage, DustTextureImage)):
+					self.ingot_image.save(path+self.shape+"/"+self.file_name)
+				else:
+					self.ingot_image.save(fp=path+"imported/"+self.file_name+'.png',format="png")
 
 # A constant here ?
 ELEMENT_PATH: str = "tools/data/elements.struct"
