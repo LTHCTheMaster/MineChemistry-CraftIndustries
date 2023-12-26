@@ -1,3 +1,1 @@
-add color overrides for some elements for their solid """shape""" (to avoid a non sufficiently dark carbon dust for example)
-add an "exclude" flag to not generate some types of textures for some elements
-add other "ingot base" (iron and copper) (gold is currenty th only usable base)
+add other "ingot base" (iron and copper) (gold is currenty the only usable base)

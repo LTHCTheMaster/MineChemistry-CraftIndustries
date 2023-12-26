@@ -44,7 +44,12 @@ class Element:
 			if self.shape == "ingot":
 				self.ingot_image = IngotTextureImage(self.color)
 			elif self.shape == "dust":
-				self.ingot_image = DustTextureImage(self.color)
+				try:
+					if "color_override" in struct:
+						self.ingot_image = DustTextureImage(struct["color_override"])
+					else: self.ingot_image = DustTextureImage(self.color)
+				except:
+					self.ingot_image = DustTextureImage(self.color)
 			elif self.shape == "external":
 				if "path" in struct:
 					tmp_base_path: str = "tools/data/" + "/".join(struct["path"].split(":")) + "_"
