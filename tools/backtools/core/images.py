@@ -50,8 +50,61 @@ class ItemTextureImage(PureBaseImage):
 		super().__init__(color)
 		self.draw()
 
-# Ingot
-PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
+def colorEditionIngot(color: tuple[int, int, int, int], palette_index: int, palette: tuple[tuple[int, int, int, int]]) -> tuple[int, int, int, int]:
+	if i == 0: return (0, 0, 0, 0)
+	return (round(color[0] * 0.651 + palette[palette_index][0] * 0.349), round(color[1] * 0.6509 + palette[palette_index][1] * 0.3491), round(color[2] * 0.649 + palette[palette_index][2] * 0.351), 255)
+
+class IngotTextureImage(ItemTextureImage):
+	def __init__(self, color: str):
+		super().__init__(color)
+
+	def draw(self):
+		pass
+
+# Copper Based Ingot
+PALETTE_COPPER_INGOT: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0), # Transparent
+	makeColorTuple("65"*3), # Border Top
+	makeColorTuple("5D"*3), # Border Bottom
+	makeColorTuple("4C"*3),
+	makeColorTuple("95"*3),
+	makeColorTuple("81"*3),
+	makeColorTuple("72"*3),
+	makeColorTuple("84"*3),
+	makeColorTuple("CC"*3), # Edges
+	makeColorTuple("E7"*3), # Corner
+)
+
+COPPER_INGOT: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 4, 4, 2, 0, 0, 0),
+	(0, 0, 0, 0, 1, 1, 1, 7, 4, 5, 5, 4, 7, 2, 0, 0),
+	(0, 1, 1, 1, 4, 7, 7, 4, 5, 5, 4, 7, 7, 4, 2, 0),
+	(1, 8, 4, 7, 7, 7, 4, 5, 5, 4, 7, 7, 8, 8, 7, 2),
+	(1, 7, 8, 7, 7, 4, 4, 4, 7, 8, 8, 8, 4, 5, 5, 3),
+	(1, 7, 4, 8, 7, 7, 8, 8, 8, 7, 4, 4, 5, 6, 5, 3),
+	(1, 7, 5, 4, 9, 8, 4, 5, 5, 4, 4, 5, 6, 6, 4, 3),
+	(1, 7, 5, 5, 8, 4, 5, 5, 4, 4, 5, 6, 5, 3, 3, 0),
+	(0, 1, 4, 5, 8, 5, 5, 4, 4, 5, 3, 3, 3, 0, 0, 0),
+	(0, 0, 1, 5, 7, 5, 4, 3, 3, 3, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 1, 1, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class CopperIngotTextureImage(IngotTextureImage):
+	def __init__(self, color: str):
+		super().__init__(color)
+	
+	def draw(self):
+		for y, line in enumerate(COPPER_INGOT):
+			for x, index in enumerate(line):
+				if index == 0: continue
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT), index, PALETTE_COPPER_INGOT))
+# End of Copper Based Ingot
+
+# Gold Based Ingot
+PALETTE_GOLDEN_INGOT: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0), # Transparent
 	makeColorTuple("6A"*3), # Border Top
 	makeColorTuple("33"*3), # Border Bottom
@@ -63,7 +116,7 @@ PALETTE_INGOT: tuple[tuple[int, int, int, int]] = (
 	makeColorTuple("FF"*3), # Corner
 )
 
-INGOT: tuple[tuple[int]] = (
+GOLDEN_INGOT: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0),
@@ -82,20 +135,16 @@ INGOT: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 )
 
-def colorEditionIngot(color: tuple[int, int, int, int], palette_index: int) -> tuple[int, int, int, int]:
-	if i == 0: return (0, 0, 0, 0)
-	return (round(color[0] * 0.651 + PALETTE_INGOT[palette_index][0] * 0.349), round(color[1] * 0.6509 + PALETTE_INGOT[palette_index][1] * 0.3491), round(color[2] * 0.649 + PALETTE_INGOT[palette_index][2] * 0.351), 255)
-
-class IngotTextureImage(ItemTextureImage):
+class GoldenIngotTextureImage(IngotTextureImage):
 	def __init__(self, color: str):
 		super().__init__(color)
-
+	
 	def draw(self):
-		for y, line in enumerate(INGOT):
+		for y, line in enumerate(GOLDEN_INGOT):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionIngot(self.color, index)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index), index))
-# End of Ingot
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_INGOT)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_GOLDEN_INGOT), index, PALETTE_GOLDEN_INGOT))
+# End of Gold Based Ingot
 
 # Dust
 PALETTE_DUST: tuple[tuple[int, int, int, int]] = (
@@ -150,13 +199,13 @@ class DustTextureImage(ItemTextureImage):
 
 # Test Area
 
-# test = DustTextureImage("ffff00")
+# test = CopperIngotTextureImage("ffff00")
 # test.show()
 
-# test = DustTextureImage("4892d6")
+# test = CopperIngotTextureImage("4892d6")
 # test.show()
 
-# test = DustTextureImage("a82f2a")
+# test = CopperIngotTextureImage("a82f2a")
 # test.show()
 
 # End of Test Area

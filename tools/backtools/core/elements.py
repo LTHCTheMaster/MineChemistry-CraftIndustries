@@ -35,7 +35,7 @@ class Element:
 		self.natural_occurence: str = struct["natural_occurence"]
 		self.file_name: str = self.z.Z_str + "_" + self.name.lower()
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
-		self.ingot_image: IngotTextureImage | DustTextureImage | Image.Image | None = None
+		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | DustTextureImage | Image.Image | None = None
 		if self.state == "solid":
 			if "shape" in struct:
 				self.shape: str = struct["shape"]
