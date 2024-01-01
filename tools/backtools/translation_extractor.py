@@ -1,9 +1,15 @@
+"""
+Translations ?
+"""
 from datargsing import dGDM as GDM
 
 FIXED_PATH: str = "Resourcepack/assets/lthc.chemistry/lang/"
 TRANSLATION_SOURCE: str = "tools/data/translate.trslt"
 
 def buildupTranslations() -> None:
+	"""
+	Generate translations files
+	"""
 	langs: list[str] = []
 	contents: list[dict] = []
 	sub_contents: list[str] = []

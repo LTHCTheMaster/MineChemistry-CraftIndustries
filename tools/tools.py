@@ -1,8 +1,15 @@
+"""
+Tools
+"""
 from backtools import IMGRun, REGRun, buildupTranslations, runZip
 from backtools.core import elements
 from os import system, name
 
 def work():
+	"""
+	Working method
+	(main)
+	"""
 	img = IMGRun()
 	reg = REGRun()
 	while True:

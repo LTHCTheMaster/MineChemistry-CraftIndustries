@@ -1,7 +1,13 @@
+"""
+Basic Images Classes
+"""
 from PIL import Image
 
 # Don't Check, it's just some strange things here
 def makeColorTuple(color: str) -> tuple[int, int, int, int]:
+	"""
+	Cast a RGB hex formated value stored in a string to a tuple of integers that represent R, G, B and A channels of a color
+	"""
 	r, g, b = color[:2], color[2:4], color[4:]
 	red = int(r, 16)
 	green = int(g, 16)
@@ -9,9 +15,15 @@ def makeColorTuple(color: str) -> tuple[int, int, int, int]:
 	return (red, green, blue, 255)
 
 def colorMixer(maincolor: tuple[int, int, int, int], secondarycolor: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
+	"""
+	Don't try to understand this, it's not recommanded
+	"""
 	return makeColorDarker((int((maincolor[0]+secondarycolor[0])/2.1), int((maincolor[1]+secondarycolor[1])/2.4), int((maincolor[2]+secondarycolor[2])/2.2), 255))
 
 def makeColorDarker(color: tuple[int, int, int, int]) -> tuple[int, int, int, int]:
+	"""
+	Don't try to understand this, it's not recommanded
+	"""
 	return (int(color[0]*0.88), int(color[1]*0.85), int(color[2]*0.75), 255)
 #End of strange things
 
@@ -29,32 +41,69 @@ RESCALING_SIZE = (SIZE[0] * 32, SIZE[1] * 32)
 
 # Common to all textures ?
 class PureBaseImage:
+	"""
+	The Base class of a lot of other "internal Image classes"
+	"""
 	def __init__(self, color: str):
+		"""
+		The Base class of a lot of other "internal Image classes"
+		"""
 		self.image:Image.Image = Image.new("RGBA", SIZE, BLANK_IMAGE)
 		self.color: tuple[int, int, int, int] = makeColorTuple(color)
 	
 	def show(self):
+		"""
+		Display the image
+		"""
 		tmp = self.image.resize(RESCALING_SIZE, Image.Resampling.NEAREST)
 		tmp.show()
 	def getImage(self) -> Image.Image:
+		"""
+		Get the PIL.Image Image object
+		"""
 		return self.image
 	def save(self, path: str):
+		"""
+		Used to save the image
+		"""
 		self.image.save(fp=path+'.png',format="png")
 	
 	def draw(self):
+		"""
+		Drawing method, really usefull
+		To Implement
+		"""
 		pass
 
 # Element Texture Base
 class BlankImage(PureBaseImage):
+	"""
+	Element Texture Base Image
+	"""
 	def __init__(self, color: str, natural_occurence: str):
+		"""
+		Element Texture Base Image
+		"""
 		super().__init__(color)
 		self.natural_occurence = natural_occurence
 		self.draw()
 	
 	def drawBaseForm(self):
+		"""
+		A drawing method to draw the outline
+		To Implement
+		"""
 		pass
 	def colorInside(self):
+		"""
+		A drawing method to put colors
+		To Implement
+		"""
 		pass
 	def draw(self):
+		"""
+		Implemented
+		Execute drawings
+		"""
 		self.drawBaseForm()
 		self.colorInside()

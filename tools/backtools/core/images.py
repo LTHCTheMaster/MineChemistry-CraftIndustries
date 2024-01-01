@@ -1,3 +1,6 @@
+"""
+Images (big?) toolbox
+"""
 from os import listdir
 
 # A lot of strange things to automatically define class and drawings usable for state value of elements,
@@ -6,6 +9,9 @@ POS_FILE_PATH = "tools/data/elements"
 AFCIMGPATH = "tools/backtools/core/autofilecontainer/"
 
 def filecutter(content: str) -> list[str]:
+	"""
+	Cut specific files in multiple parts
+	"""
 	lcontent = content.split('\t-\n')
 	lcontent[0] = lcontent[0].replace('BLACK:','').replace('\t','')
 	lcontent[1] = lcontent[1].replace('STOPPER_LIGHT_BLUE:','').replace('\t','')
@@ -13,14 +19,24 @@ def filecutter(content: str) -> list[str]:
 	return lcontent.copy()
 
 def define_drawBaseForm(desc: list[str]) -> str:
+	"""
+	Dynamically define the code for outline drawings of elements
+	"""
 	return '\tdef drawBaseForm(self):\n\t\t' + '\n\t\t'.join([f"self.image.putpixel({i},BLACK)" for i in desc[0].split('\n')[1:-1]]) + '\n\t\tif self.natural_occurence == "decay":\n\t\t\t' + '\n\t\t\t'.join([f"self.image.putpixel({i},STOPPER_LIGHT_BLUE_DECAY)" for i in desc[1].split('\n')[1:-1]]) + '\n\t\telif self.natural_occurence == "synthetic":\n\t\t\t' + '\n\t\t\t'.join([f"self.image.putpixel({i},STOPPER_LIGHT_BLUE_SYNTHETIC)" for i in desc[1].split('\n')[1:-1]]) + '\n\t\telse:\n\t\t\t' + '\n\t\t\t'.join([f"self.image.putpixel({i},STOPPER_LIGHT_BLUE)" for i in desc[1].split('\n')[1:-1]]) + '\n\t\t' + '\n\t\t'.join([f"self.image.putpixel({i},STOPPER_DARK_BLUE)" for i in desc[2].split('\n')[1:]])
 
 def define_colorInside(desc: list[str]) -> str:
+	"""
+	Dynamically define the code for colour filling of elements
+	"""
 	return '\tdef colorInside(self):\n\t\t' + '\n\t\t'.join([f"self.image.putpixel({i},self.color)" for i in desc])
 
 def define_imageClass(prefix: str, descDrawBaseForm: list[str], descColorInside: list[str]) -> str:
+	"""
+	"Dynamically" define new "Image" Class for elements
+	"""
 	return f"class {prefix}_Image(BlankImage):\n\tdef __init__(self, color: str, natural_occurence: str):\n\t\tsuper().__init__(color, natural_occurence)\n"+define_drawBaseForm(descDrawBaseForm)+'\n'+define_colorInside(descColorInside)
 
+# do some file edition
 tmp = ""
 for i in listdir(POS_FILE_PATH):
 	local_path = POS_FILE_PATH+'/'+i+'/'+i+'_'
@@ -46,19 +62,38 @@ from .autofilecontainer.images import *
 # Other Textures
 
 class ItemTextureImage(PureBaseImage):
+	"""
+	The base image for all "solid shaped" elements
+	"""
 	def __init__(self, color: str):
+		"""
+		The base image for all "solid shaped" elements
+		"""
 		super().__init__(color)
 		self.draw()
 
 def colorEditionIngot(color: tuple[int, int, int, int], palette_index: int, palette: tuple[tuple[int, int, int, int]]) -> tuple[int, int, int, int]:
+	"""
+	To many strange code lines
+	"""
 	if i == 0: return (0, 0, 0, 0)
 	return (round(color[0] * 0.651 + palette[palette_index][0] * 0.349), round(color[1] * 0.6509 + palette[palette_index][1] * 0.3491), round(color[2] * 0.649 + palette[palette_index][2] * 0.351), 255)
 
 class IngotTextureImage(ItemTextureImage):
+	"""
+	Base class for all ingot shape
+	"""
 	def __init__(self, color: str):
+		"""
+		Base class for all ingot shape
+		"""
 		super().__init__(color)
 
 	def draw(self):
+		"""
+		Drawing method
+		To Implement
+		"""
 		pass
 
 # Copper Based Ingot
@@ -93,10 +128,19 @@ COPPER_INGOT: tuple[tuple[int]] = (
 )
 
 class CopperIngotTextureImage(IngotTextureImage):
+	"""
+	Copper ingot based image
+	"""
 	def __init__(self, color: str):
+		"""
+		Copper ingot based image
+		"""
 		super().__init__(color)
 	
 	def draw(self):
+		"""
+		Drawings
+		"""
 		for y, line in enumerate(COPPER_INGOT):
 			for x, index in enumerate(line):
 				if index == 0: continue
@@ -134,10 +178,19 @@ IRON_INGOT: tuple[tuple[int]] = (
 )
 
 class IronIngotTextureImage(IngotTextureImage):
+	"""
+	Iron ingot based image
+	"""
 	def __init__(self, color: str):
+		"""
+		Iron ingot based image
+		"""
 		super().__init__(color)
 	
 	def draw(self):
+		"""
+		Drawings
+		"""
 		for y, line in enumerate(IRON_INGOT):
 			for x, index in enumerate(line):
 				if index == 0: continue
@@ -177,11 +230,20 @@ GOLDEN_INGOT: tuple[tuple[int]] = (
 )
 
 class GoldenIngotTextureImage(IngotTextureImage):
+	"""
+	Gold ingot based image
+	"""
 	def __init__(self, color: str):
+		"""
+		Gold ingot based image
+		"""
 		super().__init__(color)
 	
 	def draw(self):
 		for y, line in enumerate(GOLDEN_INGOT):
+			"""
+		Drawings
+		"""
 			for x, index in enumerate(line):
 				if index == 0: continue
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_INGOT)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_GOLDEN_INGOT), index, PALETTE_GOLDEN_INGOT))
@@ -224,10 +286,19 @@ def colorEditionDust(color: tuple[int, int, int, int], palette_index: int) -> tu
 	return (round(color[0] * 0.652 + PALETTE_DUST[palette_index][0] * 0.348), round(color[1] * 0.6509 + PALETTE_DUST[palette_index][1] * 0.3491), round(color[2] * 0.65 + PALETTE_DUST[palette_index][2] * 0.35), 255)
 
 class DustTextureImage(ItemTextureImage):
+	"""
+	Dust image
+	"""
 	def __init__(self, color: str):
+		"""
+		Dust image
+		"""
 		super().__init__(color)
 
 	def draw(self):
+		"""
+		Drawings
+		"""
 		for y, line in enumerate(DUST):
 			for x, index in enumerate(line):
 				if index == 0: continue

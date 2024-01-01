@@ -1,13 +1,25 @@
+"""
+Data commands ?
+"""
 from .image_builder import elements
 from datargsing import dGDM as GDM
 
 FIXED_PATH: tuple[str] = ("Datapack/data/lthc.chemistry/functions/init/_intern/sub_parts/parts/registry/elements.mcfunction","Datapack/data/lthc.chemistry/loot_tables/i/elements/")
 
 class Run:
+	"""
+	Command parser and runner for all data related things
+	"""
 	def __init__(self):
+		"""
+		Command parser and runner for all data related things
+		"""
 		self.gdm = GDM()
 
 	def run(self, cmd: list[str]):
+		"""
+		Parse and Run commands
+		"""
 		match cmd[0]:
 			case "elements":
 				file_content = "## ELEMENTS\n"

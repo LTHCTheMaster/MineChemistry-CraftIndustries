@@ -1,14 +1,26 @@
+"""
+Image commands ?
+"""
 from .core import PeriodicTableBuilder, elements
 from datargsing import dGDM as GDM
 
 FIXED_PATH: tuple[str] = ["Resourcepack/assets/lthc.chemistry/models/elements/", "Resourcepack/assets/lthc.chemistry/textures/block/elements/", "Resourcepack/assets/minecraft/models/item/repeating_command_block.json"]
 
 class Run:
+	"""
+	Command parser and runner for all images related things
+	"""
 	def __init__(self):
+		"""
+		Command parser and runner for all images related things
+		"""
 		self.period = PeriodicTableBuilder(elements)
 		self.gdm = GDM()
 
 	def run(self, cmd: list[str]):
+		"""
+		Parse and Run commands
+		"""
 		match cmd[0]:
 			case "build":
 				match cmd[1]:
@@ -64,5 +76,8 @@ class Run:
 				pass
 	
 	def reload(self):
+		"""
+		Call elements reloading
+		"""
 		elements.reloadElements()
 		self.period = PeriodicTableBuilder(elements)

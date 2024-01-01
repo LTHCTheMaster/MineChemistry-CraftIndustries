@@ -1,3 +1,6 @@
+"""
+Core of a sort of toolbox
+"""
 from .images import *
 from .elements import elements
 from .periodic import PeriodicTableBuilder
