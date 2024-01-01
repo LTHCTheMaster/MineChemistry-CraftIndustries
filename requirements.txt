@@ -1,0 +1,2 @@
+Datargsing==0.2.15
+Pillow==9.5.0
