@@ -28,7 +28,10 @@ class ZipppingThread (threading.Thread):
 		Run the zipping thread
 		"""
 		dump = copypaste(BACKPATH + self.path)
-		compress(zip_name = self.zip_name + '.zip', src = dump["file"])
+		try:
+			compress(zip_name = self.zip_name + '.zip', src = dump["file"])
+		except:
+			print("\033[31mAn error occured\033[0m")
 		removeall(dump, self.path)
 
 def compress(zip_name: str, src: list[str]):

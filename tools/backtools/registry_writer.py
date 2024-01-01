@@ -35,7 +35,8 @@ class Run:
 					tmp += '{' + f"{element.state}:1b,{element.natural_occurence}:1b"
 					tmp += '},display:{Lore:[\'{"translate":"lthcthemaster.lthc.chemistry.lore.tooltip","color":"blue","italic":true}\'],Name:\'[{"translate":"lthcthemaster.lthc.chemistry.items.elements.' + element.name.lower() + '","italic":false,"color":"#ffffff""}]\'}}}'
 					register_assembly.append(tmp)
-					self.gdm.set_to_json(FIXED_PATH[1] + element.name.lower() + '.json', {"pools": [{"rolls": 1,"bonus_rolls": 0,"entries": [{"type": "minecraft:item","name": "minecraft:repeating_command_block","functions": [{"function": "minecraft:copy_nbt","source": {"type": "minecraft:storage","source": "lthc.chemistry:main"},"ops": [{"source": "REGISTRY.Items."+ str(calculated) +".tag","target": "{}","op": "merge"}]}]}]}]}, True)
+					self.gdm.set_to_json(FIXED_PATH[1] + element.name.lower() + '.json', {"pools": [{"rolls": 1,"bonus_rolls": 0,"entries": [{"type": "minecraft:item","name": "minecraft:repeating_command_block","functions": [{"function": "minecraft:copy_nbt","source": {"type": "minecraft:storage","source": "lthc.chemistry:main"},"ops": [{"source": "REGISTRY.Items."+ str(calculated) +".tag","target": "{}","op": "merge"}]}]}]}]}, False)
+					print(f"\033[93m{element.z.Z_str}:\033[0m \033[32mDone\033[0m")
 				file_content += '\n'.join(register_assembly)
 				file = open(FIXED_PATH[0], "w", encoding='utf-8')
 				file.write(file_content)

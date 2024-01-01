@@ -14,7 +14,7 @@ def work():
 	reg = REGRun()
 	while True:
 		try:
-			cmd = input("tools :\t").split(" ")
+			cmd = input("\033[36mtools :\033[0m\t").split(" ")
 			match cmd[0]:
 				case "quit" | "exit" | "stop":
 					break
@@ -46,7 +46,7 @@ def work():
 				case _:
 					pass
 		except:
-			pass
+			print("\033[31mAn error occured\033[0m")
 	return
 
 if __name__ == '__main__':
