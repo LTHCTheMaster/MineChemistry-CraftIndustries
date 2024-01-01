@@ -2,15 +2,19 @@
 	"files.exclude": {
 		"**/desktop.ini": true,
 		"Datapack/data/load": true,
-		"Datapack/data/minecraft/tags/functions/load.json": true,
-		"temp/.gitkeep": true,
+		"Datapack/data/minecraft/tags/functions/": true,
 		"**/__pycache__": true,
 		"**/*.bat": true,
 		".github": true,
 		"periodicBuildTest": true,
 		"exportTest": true,
 		"elementsBuildTest": true,
-		".vscode": true
+		".vscode": true,
+		"zip/": true,
+		"**/.gitkeep": true,
+		"Resourcepack/assets/lthc.chemistry/**/imported": true,
+		"Datapack/data/global": true,
+		"tools/backtools/core/autofilecontainer": true
 	},
 	"editor.insertSpaces": false,
     "editor.tabSize": 4,

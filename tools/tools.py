@@ -1,4 +1,4 @@
-from backtools import IMGRun, REGRun, runZip
+from backtools import IMGRun, REGRun, buildupTranslations, runZip
 from backtools.core import elements
 from os import system, name
 
@@ -34,6 +34,8 @@ def work():
 						system("clear")
 				case "zip":
 					runZip()
+				case "translation":
+					buildupTranslations()
 				case _:
 					pass
 		except:
