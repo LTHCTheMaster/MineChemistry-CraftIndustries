@@ -9,7 +9,8 @@
 		".github": true,
 		"periodicBuildTest": true,
 		"exportTest": true,
-		"elementsBuildTest": true
+		"elementsBuildTest": true,
+		".vscode": true
 	},
 	"editor.insertSpaces": false,
     "editor.tabSize": 4,

@@ -100,8 +100,49 @@ class CopperIngotTextureImage(IngotTextureImage):
 		for y, line in enumerate(COPPER_INGOT):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT), index, PALETTE_COPPER_INGOT))
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT)) if index not in (8, 9) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_COPPER_INGOT), index, PALETTE_COPPER_INGOT))
 # End of Copper Based Ingot
+
+# Iron Based Ingot
+PALETTE_IRON_INGOT: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0), # Transparent
+	makeColorTuple("5E"*3), # Border Top
+	makeColorTuple("35"*3), # Border Bottom
+	makeColorTuple("72"*3), # Border Right and one "face" of the ingot
+	makeColorTuple("82"*3),
+	makeColorTuple("A8"*3),
+	makeColorTuple("58"*3),
+	makeColorTuple("FF"*3),
+	makeColorTuple("D8"*3),
+)
+
+IRON_INGOT: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 5, 5, 3, 0, 0, 0),
+	(0, 0, 0, 0, 1, 1, 1, 5, 8, 8, 8, 8, 5, 3, 0, 0),
+	(0, 1, 1, 1, 5, 8, 8, 8, 8, 8, 8, 8, 8, 5, 3, 0),
+	(1, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 7, 7, 8, 3),
+	(1, 5, 7, 8, 8, 8, 8, 8, 8, 7, 7, 7, 8, 3, 5, 2),
+	(1, 5, 5, 7, 8, 8, 7, 7, 7, 8, 4, 3, 3, 4, 5, 2),
+	(1, 5, 5, 5, 7, 7, 8, 4, 3, 3, 3, 3, 5, 5, 5, 2),
+	(1, 4, 5, 5, 8, 4, 3, 3, 3, 3, 5, 5, 4, 2, 2, 0),
+	(0, 1, 4, 5, 8, 4, 3, 3, 4, 4, 2, 2, 2, 0, 0, 0),
+	(0, 0, 1, 4, 5, 4, 6, 2, 2, 2, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class IronIngotTextureImage(IngotTextureImage):
+	def __init__(self, color: str):
+		super().__init__(color)
+	
+	def draw(self):
+		for y, line in enumerate(IRON_INGOT):
+			for x, index in enumerate(line):
+				if index == 0: continue
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_IRON_INGOT)) if index not in (7, 8) else self.image.putpixel((x, y), colorEditionIngot(colorEditionIngot(self.color, index, PALETTE_IRON_INGOT), index, PALETTE_IRON_INGOT))
+# End of Iron Based Ingot
 
 # Gold Based Ingot
 PALETTE_GOLDEN_INGOT: tuple[tuple[int, int, int, int]] = (

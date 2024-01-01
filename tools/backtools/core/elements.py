@@ -35,34 +35,47 @@ class Element:
 		self.natural_occurence: str = struct["natural_occurence"]
 		self.file_name: str = self.z.Z_str + "_" + self.name.lower()
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
-		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | DustTextureImage | Image.Image | None = None
+		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | DustTextureImage | Image.Image | None = None
 		if self.state == "solid":
 			if "shape" in struct:
 				self.shape: str = struct["shape"]
 			else:
 				self.shape: str = "ingot"
-			if self.shape == "ingot":
-				self.ingot_image = IngotTextureImage(self.color)
-			elif self.shape == "dust":
-				try:
-					if "color_override" in struct:
-						self.ingot_image = DustTextureImage(struct["color_override"])
-					else: self.ingot_image = DustTextureImage(self.color)
-				except:
-					self.ingot_image = DustTextureImage(self.color)
-			elif self.shape == "external":
-				if "path" in struct:
-					tmp_base_path: str = "tools/data/" + "/".join(struct["path"].split(":")) + "_"
+			match self.shape:
+				case "ingot":
+					if "ingot_type" in struct:
+						ingot_type: str = struct["ingot_type"]
+						match ingot_type:
+							case "gold":
+								self.ingot_image = GoldenIngotTextureImage(self.color)
+							case "iron":
+								self.ingot_image = IronIngotTextureImage(self.color)
+							case "copper":
+								self.ingot_image = CopperIngotTextureImage(self.color)
+							case _:
+								self.ingot_image = GoldenIngotTextureImage(self.color)
+					else:
+						self.ingot_image = GoldenIngotTextureImage(self.color)
+				case "dust":
 					try:
-						self.ingot_image = Image.open(tmp_base_path + "ingot.png")
-						self.ingot_image.convert(mode="RGBA")
-						self.ingot_image.load()
+						if "color_override" in struct:
+							self.ingot_image = DustTextureImage(struct["color_override"])
+						else: self.ingot_image = DustTextureImage(self.color)
 					except:
+						self.ingot_image = DustTextureImage(self.color)
+				case "external":
+					if "path" in struct:
+						tmp_base_path: str = "tools/data/" + "/".join(struct["path"].split(":")) + "_"
+						try:
+							self.ingot_image = Image.open(tmp_base_path + "ingot.png")
+							self.ingot_image.convert(mode="RGBA")
+							self.ingot_image.load()
+						except:
+							self.fallback()
+					else:
 						self.fallback()
-				else:
+				case _:
 					self.fallback()
-			else:
-				self.fallback()
 		if "exclude_not_elements_from_export" in struct:
 			self.exclude: bool = struct["exclude_not_elements_from_export"]
 		else:
