@@ -1,1 +1,0 @@
-add other "ingot base" (iron and copper[done]) (gold is currenty the only usable base)
