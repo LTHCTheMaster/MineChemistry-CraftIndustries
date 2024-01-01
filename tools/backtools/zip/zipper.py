@@ -23,7 +23,7 @@ def compress(zip_name: str, src: list[str]):
 	if not pt.exists('zip'): mkdir('zip')
 	file = zipfile.ZipFile('zip/' + zip_name, "x", compression=zipfile.ZIP_DEFLATED, compresslevel=9)
 	for i in src:
-		file.write(i, i[len('/'.join(i.split('/')[0:3])):])
+		file.write(i, i[len('/'.join(i.split('/')[0:5])):])
 	file.close()
 
 def runZip() -> None:
