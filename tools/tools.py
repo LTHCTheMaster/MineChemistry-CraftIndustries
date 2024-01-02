@@ -1,7 +1,7 @@
 """
 Tools
 """
-from backtools import IMGRun, REGRun, buildupTranslations, runZip
+from backtools import IMGRun, REGRun, buildupTranslations, runZip, printHelpMessage
 from backtools.core import elements
 from os import system, name
 
@@ -20,7 +20,7 @@ def work():
 					break
 				case "image" | "img":
 					img.run(cmd[1:])
-				case "register" | "reg":
+				case "registry" | "register" | "reg":
 					reg.run(cmd[1:])
 				case "export":
 					elements.exportList(cmd[1])
@@ -35,14 +35,13 @@ def work():
 							if cmd[1] == i.name.lower():
 								print(i)
 				case "cls" | "clear":
-					if name == 'nt':
-						system("cls")
-					else:
-						system("clear")
+					system("cls") if name == 'nt' else system("clear")
 				case "zip":
 					runZip()
-				case "translation":
+				case "translation" | "translate":
 					buildupTranslations()
+				case "help":
+					printHelpMessage()
 				case _:
 					pass
 		except:
