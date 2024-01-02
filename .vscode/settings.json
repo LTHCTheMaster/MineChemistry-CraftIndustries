@@ -28,8 +28,8 @@
 		"linker.txt": "bat"
 	},
 	"datapack.env.detectionDepth": 2,
-	"datapack.env.cmdVersion": "1.20.2",
-	"datapack.env.dataVersion": "1.20.2",
+	"datapack.env.cmdVersion": "1.20.3",
+	"datapack.env.dataVersion": "1.20.3",
 	"[json]": {
 		"editor.maxTokenizationLineLength": 32768
 	}
