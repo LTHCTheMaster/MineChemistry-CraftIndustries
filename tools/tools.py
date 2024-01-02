@@ -4,24 +4,32 @@ Tools
 from backtools import IMGRun, REGRun, buildupTranslations, runZip, printHelpMessage
 from backtools.core import elements
 from os import system, name
+from sys import argv
 
-def work():
+class ToolsRunner:
 	"""
-	Working method
-	(main)
+	Tools
 	"""
-	img = IMGRun()
-	reg = REGRun()
-	while True:
+	def __init__(self):
+		"""
+		Tools
+		"""
+		self.img = IMGRun()
+		self.reg = REGRun()
+	
+	def runCMD(self, cmd: list[str]) -> bool:
+		"""
+		Working method
+		(main/run command)
+		"""
 		try:
-			cmd = input("\033[36mtools :\033[0m\t").split(" ")
 			match cmd[0]:
 				case "quit" | "exit" | "stop":
-					break
+					return True
 				case "image" | "img":
-					img.run(cmd[1:])
+					self.img.run(cmd[1:])
 				case "registry" | "register" | "reg":
-					reg.run(cmd[1:])
+					self.reg.run(cmd[1:])
 				case "export":
 					elements.exportList(cmd[1])
 				case "print":
@@ -46,7 +54,33 @@ def work():
 					pass
 		except:
 			print("\033[31mAn error occured\033[0m")
-	return
+		return False
+	
+	def shellLoop(self) -> None:
+		"""
+		Working method
+		(main/shell loop)
+		"""
+		while True:
+			cmd = input("\033[36mtools :\033[0m\t").split(" ")
+			if self.runCMD(cmd): break
+		return
+	
+	def argExec(self, cmdlist: list[str]) -> None:
+		"""
+		Working method
+		(main/from args)
+		"""
+		for cmd in cmdlist:
+			self.runCMD(cmd.split(" "))
+
+def work():
+	"""
+	Working method
+	(main)
+	"""
+	_tools = ToolsRunner()
+	_tools.argExec(argv[1:]) if len(argv) > 1 else _tools.shellLoop()
 
 if __name__ == '__main__':
 	work()

@@ -8,7 +8,7 @@
 		".github": true,
 		"periodicBuildTest": true,
 		"exportTest": true,
-		"elementsBuildTest": true,
+		"elementsBuildTest*": true,
 		".vscode": true,
 		"zip/": true,
 		"**/.gitkeep": true,

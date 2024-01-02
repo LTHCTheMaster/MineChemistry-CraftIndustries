@@ -8,7 +8,7 @@ def formatHelpLine(head: str, desc: str, tabs: int, argslist: str | None = None,
 	"""
 	if state:
 		return '\t'*tabs + f" \033[93m{desc}"
-	return f"\033[95m{head}\033[0m\033[92m{argslist}\033[0m:" + '\t'*tabs + f"\033[93m{desc}" if type(argslist) is str else f"\033[95m{head}\033[0m:" + '\t'*tabs + f"\033[93m{desc}"
+	return f"\033[95m{head} \033[0m\033[92m{argslist}\033[0m:" + '\t'*tabs + f"\033[93m{desc}" if type(argslist) is str else f"\033[95m{head}\033[0m:" + '\t'*tabs + f"\033[93m{desc}"
 
 def formatHelpMultiLine(place: int, cmd: str, lines: tuple[tuple[str | int | tuple[tuple[str | int]]]], state: bool = False) -> str:
 	tmp: str = formatHelpLine(cmd, "", 1, None, state) + '\n' if place == 0 else '\t' * (place-1) + formatHelpLine("", "", 1, cmd, state)
@@ -45,12 +45,12 @@ def printHelpMessage():
 	print(formatHelpMultiLine(0, "image, img", (
 		("build", (
 			(("elements <path>", "save all elements images at a specified location", 2),),
-			(("\tperiodic <path>", "save all periodic tables images at a specified location", 2),)
+			(("\t periodic <path>", "save all periodic tables images at a specified location", 2),)
 		)),
 		("show", (
 			(("element <number|element name>", "show the specified elements", 1),),
-			(("\tperiodic [\033[4mingot\033[0m]", "show periodic table", 2),)
+			(("\t periodic [\033[4mingot\033[0m]", "show periodic table", 2),)
 		)),
-		("reload", "reload data for textures (and also data)", 3),
-		("rp", "build the RP", 3)
+		("reload", " reload data for textures (and also data)", 2),
+		("rp", " build the RP", 3)
 	)))
