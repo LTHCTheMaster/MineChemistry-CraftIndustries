@@ -10,6 +10,16 @@ if "%~1" == "full" (
 	python tools/tools.py "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
 	goto :exit
 )
+if "%~1" == "build" (
+	del zip\*.zip
+	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "export exportTest" "cls"
+	goto :exit
+)
+if "%~1" == "workspace" (
+	del zip\*.zip
+	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "export exportTest" "cls" "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
+	goto :exit
+)
 python tools/tools.py
 :choice
 set /P c=[1;92mDo you want to restart the script[Y/N]?[0m
