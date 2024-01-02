@@ -6,8 +6,7 @@ if "%~1" == "gen" (
 	goto :exit
 )
 if "%~1" == "full" (
-	del zip\DatapackZip.zip
-	del zip\ResourcepackZip.zip
+	del zip\*.zip
 	python tools/tools.py "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
 	goto :exit
 )
