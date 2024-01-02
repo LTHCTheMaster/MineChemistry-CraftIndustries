@@ -4,7 +4,7 @@ Data commands ?
 from .image_builder import elements
 from datargsing import dGDM as GDM
 
-FIXED_PATH: tuple[str] = ("Datapack/data/lthc.chemistry/functions/init/_intern/sub_parts/parts/registry/elements.mcfunction","Datapack/data/lthc.chemistry/loot_tables/i/elements/")
+FIXED_PATH: tuple[str] = ("Datapack/data/lthc.chemistry/functions/init/_intern/sub_parts/parts/registry/elements.mcfunction","Datapack/data/lthc.chemistry/loot_tables/i/elements/","Datapack/data/lthc.chemistry/functions/init/_intern/sub_parts/parts/registry/elements/solid.mcfunction","Datapack/data/lthc.chemistry/loot_tables/i/elements/solid/")
 
 class Run:
 	"""
@@ -41,3 +41,29 @@ class Run:
 				file = open(FIXED_PATH[0], "w", encoding='utf-8')
 				file.write(file_content)
 				file.close()
+			case "solid":
+				file_content = "## SOLID\n"
+				register_assembly: list[str] = []
+				toAdd = 0
+				for numlowered, element in enumerate(elements.elements):
+					if element.state == "solid" and not element.exclude:
+						calculated = 170118 + toAdd
+						tmp = "# " + element.name.capitalize() + '\n'
+						tmp += f"data modify storage lthc.chemistry:main REGISTRY.Items.{calculated} "
+						tmp += 'set value {Slot:16b,id:"minecraft:repeating_command_block",Count:1b,tag:{ctc:{id:"'
+						tmp += element.name.lower()
+						tmp += '_solid",from:"lthc.chemistry",traits:{solid:1b}}'
+						tmp += f",CustomModelData:{calculated},lthc_chemistry:"
+						tmp += '{' + f"{element.natural_occurence}:1b"
+						tmp += '},display:{Lore:[\'{"translate":"lthcthemaster.lthc.chemistry.lore.tooltip","color":"blue","italic":true}\'],Name:\'[{"translate":"lthcthemaster.lthc.chemistry.items.elements_solid.' + element.name.lower() + '","italic":false,"color":"#ffffff""}]\'}}}'
+						register_assembly.append(tmp)
+						self.gdm.set_to_json(FIXED_PATH[3] + element.name.lower() + '.json', {"pools": [{"rolls": 1,"bonus_rolls": 0,"entries": [{"type": "minecraft:item","name": "minecraft:repeating_command_block","functions": [{"function": "minecraft:copy_nbt","source": {"type": "minecraft:storage","source": "lthc.chemistry:main"},"ops": [{"source": "REGISTRY.Items."+ str(calculated) +".tag","target": "{}","op": "merge"}]}]}]}]}, False)
+						toAdd += 1
+						print(f"\033[93m{element.z.Z_str}:\033[0m \033[32mDone\033[0m")
+
+				file_content += '\n'.join(register_assembly)
+				file = open(FIXED_PATH[2], "w", encoding='utf-8')
+				file.write(file_content)
+				file.close()
+			case _:
+				pass
