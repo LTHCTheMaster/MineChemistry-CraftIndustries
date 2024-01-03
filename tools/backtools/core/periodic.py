@@ -61,5 +61,5 @@ class PeriodicTableBuilder:
 		tmp.save(fp=path+"/000_TableauPNG.png",format="png")
 		tmp = self.ingot_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
 		tmp.save(fp=path+"/000_TableauPNG_INGOT.png",format="png")
-		tmp = self.ingot_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
+		tmp = self.block_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
 		tmp.save(fp=path+"/000_TableauPNG_BLOCK.png",format="png")
