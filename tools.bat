@@ -6,18 +6,18 @@ if "%~1" == "gen" (
 	goto :exit
 )
 if "%~1" == "full" (
-	del zip\*.zip
+	del /Q zip\*.zip
 	python tools/tools.py "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
 	goto :exit
 )
 if "%~1" == "build" (
-	del zip\*.zip
-	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "export exportTest" "cls"
+	del /Q zip\*.zip
+	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "image build templates templatesExport" "cls" "export exportTest" "cls"
 	goto :exit
 )
 if "%~1" == "workspace" (
-	del zip\*.zip
-	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "export exportTest" "cls" "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
+	del /Q zip\*.zip
+	python tools/tools.py "image build elements elementsBuildTest" "cls" "image build periodic periodicBuildTest" "cls" "image build templates templatesExport" "cls" "export exportTest" "cls" "image rp" "cls" "registry elements" "cls" "registry solid" "cls" "translation" "cls" "zip" "cls"
 	goto :exit
 )
 python tools/tools.py

@@ -8,6 +8,7 @@
 		".github": true,
 		"periodicBuildTest": true,
 		"exportTest": true,
+		"templatesExport": true,
 		"elementsBuildTest*": true,
 		".vscode": true,
 		"zip/": true,

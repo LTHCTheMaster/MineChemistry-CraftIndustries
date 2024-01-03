@@ -33,4 +33,5 @@ del PALETTE_IRON_INGOT
 del IRON_INGOT
 del PALETTE_SPECIAL_INGOT
 del SPECIAL_INGOT
+del TemplateImg
 del colorEditionIngot

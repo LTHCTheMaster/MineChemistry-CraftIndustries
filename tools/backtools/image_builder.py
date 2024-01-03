@@ -1,7 +1,7 @@
 """
 Image commands ?
 """
-from .core import PeriodicTableBuilder, elements
+from .core import PeriodicTableBuilder, elements, TemplateImageExporter
 from datargsing import dGDM as GDM
 
 FIXED_PATH: tuple[str] = ["Resourcepack/assets/lthc.chemistry/models/elements/", "Resourcepack/assets/lthc.chemistry/textures/block/elements/", "Resourcepack/assets/minecraft/models/item/repeating_command_block.json"]
@@ -16,6 +16,7 @@ class Run:
 		"""
 		self.period = PeriodicTableBuilder(elements)
 		self.gdm = GDM()
+		self.templates = TemplateImageExporter()
 
 	def run(self, cmd: list[str]):
 		"""
@@ -29,6 +30,9 @@ class Run:
 						print("\033[32mDone\033[0m")
 					case "periodic":
 						self.period.save(cmd[2])
+						print("\033[32mDone\033[0m")
+					case "templates":
+						self.templates.export(cmd[2])
 						print("\033[32mDone\033[0m")
 					case _:
 						pass

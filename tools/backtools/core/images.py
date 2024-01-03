@@ -1,7 +1,7 @@
 """
 Images (big?) toolbox
 """
-from os import listdir
+from os import listdir, path as pt, mkdir
 
 # A lot of strange things to automatically define class and drawings usable for state value of elements,
 # Usefull to quickly edit a state "representation", you just need to restart the program
@@ -346,6 +346,54 @@ class DustTextureImage(ItemTextureImage):
 				if index == 0: continue
 				self.image.putpixel((x, y), colorEditionDust(self.color, index)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index), index))
 # End of Dust
+
+class TemplateImg(PureBaseImage):
+	"""
+	Template Image
+	"""
+	def __init__(self, color: str, model: tuple[tuple[int]], palette: tuple[tuple[int, int, int, int]]):
+		"""
+		Template Image
+		"""
+		super().__init__(color)
+		self.model = model
+		self.palette = palette
+		self.draw()
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(self.model):
+			for x, index in enumerate(line):
+				if index == 0: continue
+				self.image.putpixel((x, y), self.palette[index])
+
+class TemplateImageExporter:
+	"""
+	used to export template images
+	"""
+	def __init__(self):
+		"""
+		used to export template images
+		"""
+		self.ingot0Template: TemplateImg = TemplateImg("000000", COPPER_INGOT, PALETTE_COPPER_INGOT)
+		self.ingot1Template: TemplateImg = TemplateImg("000000", IRON_INGOT, PALETTE_IRON_INGOT)
+		self.ingot2Template: TemplateImg = TemplateImg("000000", GOLDEN_INGOT, PALETTE_GOLDEN_INGOT)
+		self.ingot3Template: TemplateImg = TemplateImg("000000", SPECIAL_INGOT, PALETTE_SPECIAL_INGOT)
+		self.dustTemplate: TemplateImg = TemplateImg("000000", DUST, PALETTE_DUST)
+	
+	def export(self, path: str):
+		"""
+		export templates images
+		"""
+		if not pt.exists(path):
+			mkdir(path)
+		self.ingot0Template.save(path+'/ingot0_template')
+		self.ingot1Template.save(path+'/ingot1_template')
+		self.ingot2Template.save(path+'/ingot2_template')
+		self.ingot3Template.save(path+'/ingot3_template')
+		self.dustTemplate.save(path+'/dust_template')
 
 # End of Other Textures
 

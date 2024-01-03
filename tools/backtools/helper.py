@@ -45,7 +45,8 @@ def printHelpMessage():
 	print(formatHelpMultiLine(0, "image, img", (
 		("build", (
 			(("elements <path>", "save all elements images at a specified location", 2),),
-			(("\t periodic <path>", "save all periodic tables images at a specified location", 2),)
+			(("\t periodic <path>", "save all periodic tables images at a specified location", 2),),
+			(("\t templates <path>", "save all templates images at a specified location", 2),)
 		)),
 		("show", (
 			(("element <number|element name>", "show the specified elements", 1),),

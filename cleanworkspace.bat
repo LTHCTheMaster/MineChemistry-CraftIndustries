@@ -5,6 +5,7 @@ del /Q elementsBuildTestdust
 del /Q elementsBuildTestimported
 del /Q elementsBuildTestingot
 del /Q periodicBuildTest
+del /Q templatesExport
 del /Q exportTest
 del /Q Datapack\data\lthc.chemistry\loot_tables\i\elements\*.json
 del /Q Datapack\data\lthc.chemistry\loot_tables\i\elements\solid\*.json
