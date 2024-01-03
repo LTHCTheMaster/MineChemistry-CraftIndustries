@@ -394,55 +394,6 @@ class DustTextureImage(ItemTextureImage):
 				self.image.putpixel((x, y), colorEditionDust(self.color, index, PALETTE_DUST)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index, PALETTE_DUST), index, PALETTE_DUST))
 # End of Dust
 
-class TemplateImg(PureBaseImage):
-	"""
-	Template Image
-	"""
-	def __init__(self, color: str, model: tuple[tuple[int]], palette: tuple[tuple[int, int, int, int]]):
-		"""
-		Template Image
-		"""
-		super().__init__(color)
-		self.model = model
-		self.palette = palette
-		self.draw()
-	
-	def draw(self):
-		"""
-		Drawings
-		"""
-		for y, line in enumerate(self.model):
-			for x, index in enumerate(line):
-				if index == 0: continue
-				self.image.putpixel((x, y), self.palette[index])
-
-class TemplateImageExporter:
-	"""
-	used to export template images
-	"""
-	def __init__(self):
-		"""
-		used to export template images
-		"""
-		self.ingot0Template: TemplateImg = TemplateImg("000000", COPPER_INGOT, PALETTE_COPPER_INGOT)
-		self.ingot1Template: TemplateImg = TemplateImg("000000", IRON_INGOT, PALETTE_IRON_INGOT)
-		self.ingot2Template: TemplateImg = TemplateImg("000000", GOLDEN_INGOT, PALETTE_GOLDEN_INGOT)
-		self.ingot3Template: TemplateImg = TemplateImg("000000", SPECIAL_INGOT, PALETTE_SPECIAL_INGOT)
-		self.dustTemplate: TemplateImg = TemplateImg("000000", DUST, PALETTE_DUST)
-	
-	def export(self, path: str):
-		"""
-		export templates images
-		"""
-		if not pt.exists(path):
-			mkdir(path)
-		self.ingot0Template.save(path+'/ingot0_template')
-		self.ingot1Template.save(path+'/ingot1_template')
-		self.ingot2Template.save(path+'/ingot2_template')
-		self.ingot3Template.save(path+'/ingot3_template')
-		self.dustTemplate.save(path+'/dust_template')
-##################################
-
 ##################################
 class BlockTextureImage(PureBaseImage):
 	"""
@@ -672,6 +623,65 @@ class GoldenBlockTextureImage(IngotBlockTextureImage):
 			for x, index in enumerate(line):
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_BLOCK))
 # End of Gold Based Block
+##################################
+
+##################################
+class TemplateImg(PureBaseImage):
+	"""
+	Template Image
+	"""
+	def __init__(self, color: str, model: tuple[tuple[int]], palette: tuple[tuple[int, int, int, int]]):
+		"""
+		Template Image
+		"""
+		super().__init__(color)
+		self.model = model
+		self.palette = palette
+		self.draw()
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(self.model):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), self.palette[index])
+
+class TemplateImageExporter:
+	"""
+	used to export template images
+	"""
+	def __init__(self):
+		"""
+		used to export template images
+		"""
+		self.ingot0Template: TemplateImg = TemplateImg("000000", COPPER_INGOT, PALETTE_COPPER_INGOT)
+		self.ingot1Template: TemplateImg = TemplateImg("000000", IRON_INGOT, PALETTE_IRON_INGOT)
+		self.ingot2Template: TemplateImg = TemplateImg("000000", GOLDEN_INGOT, PALETTE_GOLDEN_INGOT)
+		self.ingot3Template: TemplateImg = TemplateImg("000000", SPECIAL_INGOT, PALETTE_SPECIAL_INGOT)
+		self.ingot4Template: TemplateImg = TemplateImg("000000", SPECIALL_INGOT, PALETTE_SPECIALL_INGOT)
+		self.dustTemplate: TemplateImg = TemplateImg("000000", DUST, PALETTE_DUST)
+		self.ingot0BlockTemplate: TemplateImg = TemplateImg("000000", COPPER_BLOCK, PALETTE_COPPER_BLOCK)
+		self.ingot1BlockTemplate: TemplateImg = TemplateImg("000000", IRON_BLOCK, PALETTE_IRON_BLOCK)
+		self.ingot2BlockTemplate: TemplateImg = TemplateImg("000000", GOLDEN_BLOCK, PALETTE_GOLDEN_BLOCK)
+		self.dustBlockTemplate: TemplateImg = TemplateImg("000000", DUST_BLOCK, PALETTE_DUST_BLOCK)
+	
+	def export(self, path: str):
+		"""
+		export templates images
+		"""
+		if not pt.exists(path):
+			mkdir(path)
+		self.ingot0Template.save(path+'/ingot0_template')
+		self.ingot1Template.save(path+'/ingot1_template')
+		self.ingot2Template.save(path+'/ingot2_template')
+		self.ingot3Template.save(path+'/ingot3_template')
+		self.ingot4Template.save(path+'/ingot4_template')
+		self.dustTemplate.save(path+'/dust_template')
+		self.ingot0BlockTemplate.save(path+'/ingot0_block_template')
+		self.ingot1BlockTemplate.save(path+'/ingot1_block_template')
+		self.ingot2BlockTemplate.save(path+'/ingot2_block_template')
+		self.dustBlockTemplate.save(path+'/dust_block_template')
 ##################################
 
 # End of Other Textures
