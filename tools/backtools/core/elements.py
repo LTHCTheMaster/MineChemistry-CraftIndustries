@@ -66,7 +66,7 @@ class Element:
 		self.natural_occurence: str = struct["natural_occurence"]
 		self.file_name: str = self.z.Z_str + "_" + self.name.lower()
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
-		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | DustTextureImage | Image.Image | None = None
+		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | SpecialIngotTextureImage | DustTextureImage | Image.Image | None = None
 		if self.state == "solid":
 			if "shape" in struct:
 				self.shape: str = struct["shape"]
@@ -83,6 +83,8 @@ class Element:
 								self.ingot_image = IronIngotTextureImage(self.color)
 							case "copper":
 								self.ingot_image = CopperIngotTextureImage(self.color)
+							case "special":
+								self.ingot_image = SpecialIngotTextureImage(self.color)
 							case _:
 								self.ingot_image = GoldenIngotTextureImage(self.color)
 					else:
@@ -130,7 +132,7 @@ class Element:
 		Related to a really specific image
 		"""
 		if self.state == "solid":
-			if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, DustTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.coords)
+			if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, DustTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.coords)
 			else: return (self.image.getImage(), self.ingot_image, self.coords)
 		else: return (self.image.getImage(), None, self.coords)
 
@@ -141,7 +143,7 @@ class Element:
 		self.image.save(path+"/"+self.file_name)
 		if self.state == "solid":
 			if not self.exclude:
-				if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, DustTextureImage)):
+				if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, DustTextureImage)):
 					self.ingot_image.save(path+self.shape+"/"+self.file_name)
 				else:
 					self.ingot_image.save(fp=path+"imported/"+self.file_name+'.png',format="png")

@@ -632,6 +632,7 @@
 	"Promethium": {
 		"Z": "061",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "a3ffbd",
 		"periodic_draw": {
 			"x": 96,
@@ -865,6 +866,7 @@
 	"Polonium": {
 		"Z": "084",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "56ce80",
 		"periodic_draw": {
 			"x": 240,
@@ -875,6 +877,7 @@
 	"Astatine": {
 		"Z": "085",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "1d5b48",
 		"periodic_draw": {
 			"x": 256,
@@ -895,6 +898,7 @@
 	"Francium": {
 		"Z": "087",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "340159",
 		"periodic_draw": {
 			"x": 0,
@@ -905,6 +909,7 @@
 	"Radium": {
 		"Z": "088",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "206d10",
 		"periodic_draw": {
 			"x": 16,
@@ -915,6 +920,7 @@
 	"Actinium": {
 		"Z": "089",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "70a0fa",
 		"periodic_draw": {
 			"x": 32,
@@ -935,6 +941,7 @@
 	"Protactinium": {
 		"Z": "091",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "0096ff",
 		"periodic_draw": {
 			"x": 64,
@@ -955,6 +962,7 @@
 	"Neptunium": {
 		"Z": "093",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "12ce1b",
 		"periodic_draw": {
 			"x": 96,
@@ -965,6 +973,7 @@
 	"Plutonium": {
 		"Z": "094",
 		"state": "solid",
+		"ingot_type": "special",
 		"color": "0b7c10",
 		"periodic_draw": {
 			"x": 112,
