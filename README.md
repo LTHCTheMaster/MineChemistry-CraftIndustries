@@ -2,8 +2,8 @@
 
 ## 🤝 Contributors
 
-<a href = "https://github.com/LTHCTheMaster/The-Advancenergy/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=LTHCTheMaster/The-Advancenergy"/>
+<a href = "https://github.com/LTHCTheMaster/MineChemistry-CraftIndustries/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=LTHCTheMaster/MineChemistry-CraftIndustries"/>
 </a>
 
 ## 🫂 Credits
