@@ -61,6 +61,7 @@ from .autofilecontainer.images import *
 
 # Other Textures
 
+##################################
 class ItemTextureImage(PureBaseImage):
 	"""
 	The base image for all "solid shaped" elements
@@ -74,9 +75,8 @@ class ItemTextureImage(PureBaseImage):
 
 def colorEditionIngot(color: tuple[int, int, int, int], palette_index: int, palette: tuple[tuple[int, int, int, int]]) -> tuple[int, int, int, int]:
 	"""
-	To many strange code lines
+	Too many strange code lines
 	"""
-	if i == 0: return (0, 0, 0, 0)
 	return (round(color[0] * 0.651 + palette[palette_index][0] * 0.349), round(color[1] * 0.6509 + palette[palette_index][1] * 0.3491), round(color[2] * 0.649 + palette[palette_index][2] * 0.351), 255)
 
 class IngotTextureImage(ItemTextureImage):
@@ -323,9 +323,11 @@ DUST: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0),
 )
 
-def colorEditionDust(color: tuple[int, int, int, int], palette_index: int) -> tuple[int, int, int, int]:
-	if i == 0: return (0, 0, 0, 0)
-	return (round(color[0] * 0.652 + PALETTE_DUST[palette_index][0] * 0.348), round(color[1] * 0.6509 + PALETTE_DUST[palette_index][1] * 0.3491), round(color[2] * 0.65 + PALETTE_DUST[palette_index][2] * 0.35), 255)
+def colorEditionDust(color: tuple[int, int, int, int], palette_index: int, palette: tuple[tuple[int, int, int, int]]) -> tuple[int, int, int, int]:
+	"""
+	Too many strange code lines
+	"""
+	return (round(color[0] * 0.652 + palette[palette_index][0] * 0.348), round(color[1] * 0.6509 + palette[palette_index][1] * 0.3491), round(color[2] * 0.65 + palette[palette_index][2] * 0.35), 255)
 
 class DustTextureImage(ItemTextureImage):
 	"""
@@ -344,7 +346,7 @@ class DustTextureImage(ItemTextureImage):
 		for y, line in enumerate(DUST):
 			for x, index in enumerate(line):
 				if index == 0: continue
-				self.image.putpixel((x, y), colorEditionDust(self.color, index)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index), index))
+				self.image.putpixel((x, y), colorEditionDust(self.color, index, PALETTE_DUST)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index, PALETTE_DUST), index, PALETTE_DUST))
 # End of Dust
 
 class TemplateImg(PureBaseImage):
@@ -394,6 +396,238 @@ class TemplateImageExporter:
 		self.ingot2Template.save(path+'/ingot2_template')
 		self.ingot3Template.save(path+'/ingot3_template')
 		self.dustTemplate.save(path+'/dust_template')
+##################################
+
+##################################
+class BlockTextureImage(PureBaseImage):
+	"""
+	The base image for all blocks for "solid shaped" elements
+	"""
+	def __init__(self, color: str):
+		"""
+		The base image for all blocks for "solid shaped" elements
+		"""
+		super().__init__(color)
+		self.draw()
+
+class IngotBlockTextureImage(BlockTextureImage):
+	"""
+	Base class for all blocks from ingot shape
+	"""
+	def __init__(self, color: str):
+		"""
+		Base class for all blocks from ingot shape
+		"""
+		super().__init__(color)
+
+	def draw(self):
+		"""
+		Drawing method
+		To Implement
+		"""
+		pass
+
+# Dust
+PALETTE_DUST_BLOCK: tuple[tuple[int, int, int, int]] = (
+	makeColorTuple("58"*3),
+	makeColorTuple("4C"*3),
+	makeColorTuple("40"*3),
+	makeColorTuple("38"*3),
+	makeColorTuple("29"*3)
+)
+
+DUST_BLOCK: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 1, 1, 0, 1, 1, 2, 2, 2, 1, 1, 0, 1, 1, 1, 0),
+	(0, 1, 1, 0, 2, 2, 4, 2, 2, 2, 2, 2, 1, 2, 1, 0),
+	(0, 1, 1, 2, 1, 3, 3, 4, 4, 3, 3, 2, 4, 2, 1, 0),
+	(0, 0, 1, 2, 3, 3, 4, 3, 2, 4, 3, 3, 2, 0, 0, 0),
+	(0, 1, 2, 3, 4, 4, 4, 4, 4, 4, 4, 4, 0, 2, 1, 0),
+	(0, 1, 4, 2, 3, 4, 4, 4, 4, 4, 4, 3, 3, 3, 1, 0),
+	(0, 2, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 3, 2, 2, 0),
+	(0, 2, 2, 1, 3, 4, 4, 4, 4, 4, 4, 3, 3, 3, 1, 0),
+	(0, 1, 2, 0, 3, 3, 4, 2, 3, 4, 3, 3, 3, 2, 1, 0),
+	(0, 1, 2, 3, 3, 4, 4, 4, 0, 4, 4, 3, 2, 2, 0, 0),
+	(0, 1, 1, 2, 3, 3, 4, 3, 4, 4, 3, 3, 3, 4, 1, 0),
+	(0, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 0),
+	(0, 0, 1, 4, 2, 0, 2, 3, 3, 4, 2, 2, 1, 2, 1, 0),
+	(0, 1, 1, 1, 0, 0, 1, 1, 2, 2, 1, 1, 1, 1, 1, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class DustBlockTextureImage(BlockTextureImage):
+	"""
+	"Dust" block textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Dust" block textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(DUST_BLOCK):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionDust(self.color, index, PALETTE_DUST_BLOCK))
+# End of Dust
+
+# Copper Based Block
+PALETTE_COPPER_BLOCK: tuple[tuple[int, int, int, int]] = (
+	(149, 149, 149, 255),
+	(140, 140, 140, 255),
+	(131, 131, 131, 255),
+	(122, 122, 122, 255),
+	(103, 103, 103, 255),
+	(112, 112, 112, 255),
+	(92, 92, 92, 255),
+	(84, 84, 84, 255)
+)
+
+COPPER_BLOCK: tuple[tuple[int]] = (
+	(0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 2, 3, 4),
+	(0, 2, 2, 3, 3, 2, 2, 1, 0, 1, 1, 1, 3, 3, 5, 6),
+	(0, 2, 0, 5, 2, 2, 1, 0, 1, 1, 1, 3, 0, 5, 5, 6),
+	(0, 3, 5, 6, 2, 1, 0, 1, 2, 1, 3, 3, 5, 6, 5, 7),
+	(0, 3, 2, 2, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 3, 7),
+	(0, 2, 2, 1, 1, 1, 2, 2, 3, 3, 4, 6, 4, 3, 5, 7),
+	(0, 2, 1, 0, 1, 2, 2, 3, 3, 4, 6, 4, 3, 5, 5, 7),
+	(0, 1, 0, 1, 2, 2, 3, 3, 4, 6, 4, 3, 3, 5, 2, 7),
+	(0, 0, 1, 2, 2, 3, 5, 4, 6, 4, 3, 3, 5, 2, 2, 7),
+	(0, 1, 2, 2, 3, 5, 5, 4, 4, 3, 3, 3, 2, 2, 1, 6),
+	(0, 2, 2, 3, 5, 5, 4, 5, 3, 3, 3, 2, 2, 1, 0, 6),
+	(0, 2, 3, 5, 5, 5, 5, 3, 3, 5, 2, 2, 1, 0, 1, 6),
+	(0, 3, 0, 5, 4, 5, 3, 3, 5, 2, 2, 1, 0, 5, 2, 7),
+	(0, 5, 5, 6, 5, 3, 5, 5, 2, 2, 1, 1, 5, 6, 3, 7),
+	(0, 4, 6, 5, 3, 5, 5, 2, 2, 1, 1, 1, 2, 3, 3, 6),
+	(1, 6, 4, 6, 6, 7, 6, 7, 4, 4, 4, 6, 6, 7, 6, 6)
+)
+
+class CopperBlockTextureImage(IngotBlockTextureImage):
+	"""
+	"Copper" block textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Copper" block textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(COPPER_BLOCK):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_COPPER_BLOCK))
+# End of Copper Based Block
+
+# Iron Based Block
+PALETTE_IRON_BLOCK: tuple[tuple[int, int, int, int]] = (
+	(183, 183, 183, 255),
+	(168, 168, 168, 255),
+	(217, 217, 217, 255),
+	(211, 211, 211, 255),
+	(209, 209, 209, 255),
+	(205, 205, 205, 255),
+	(160, 160, 160, 255),
+	(151, 151, 151, 255),
+	(195, 195, 195, 255),
+	(199, 199, 199, 255),
+	(189, 189, 189, 255)
+)
+
+IRON_BLOCK: tuple[tuple[int]] = (
+	(0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0),
+	(1, 2, 2, 2, 2, 2, 3, 3, 3, 4, 5, 5, 5, 5, 5, 1),
+	(1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6),
+	(7, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 10, 10, 7),
+	(1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 5, 5, 5, 5, 5, 6),
+	(1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6),
+	(7, 8, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 7),
+	(1, 2, 2, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 5, 6),
+	(1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6),
+	(7, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 10, 10, 10, 7),
+	(1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 5, 5, 5, 5, 6),
+	(1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6),
+	(7, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 7),
+	(1, 2, 2, 2, 2, 3, 3, 3, 3, 5, 5, 5, 5, 5, 5, 6),
+	(1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6),
+	(1, 1, 1, 1, 1, 1, 1, 6, 6, 1, 6, 6, 6, 6, 6, 6)
+)
+
+class IronBlockTextureImage(IngotBlockTextureImage):
+	"""
+	"Iron" block textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Iron" block textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(IRON_BLOCK):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_IRON_BLOCK))
+# End of Iron Based Block
+
+# Gold Based Block
+PALETTE_GOLDEN_BLOCK: tuple[tuple[int, int, int, int]] = (
+	(195, 195, 195, 255),
+	(188, 188, 188, 255),
+	(159, 159, 159, 255),
+	(235, 235, 235, 255),
+	(243, 243, 243, 255),
+	(216, 216, 216, 255),
+	(205, 205, 205, 255),
+	(209, 209, 209, 255),
+	(151, 151, 151, 255)
+)
+
+GOLDEN_BLOCK: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 2),
+	(0, 3, 4, 4, 5, 5, 3, 3, 3, 5, 5, 6, 6, 3, 3, 2),
+	(0, 4, 6, 6, 7, 3, 5, 5, 6, 0, 1, 1, 0, 7, 3, 2),
+	(0, 4, 6, 7, 3, 5, 5, 7, 6, 0, 0, 0, 7, 7, 5, 2),
+	(1, 5, 7, 5, 5, 5, 7, 6, 0, 0, 6, 7, 7, 6, 5, 2),
+	(1, 5, 5, 5, 5, 7, 6, 0, 0, 6, 5, 5, 6, 0, 1, 8),
+	(0, 3, 5, 5, 7, 7, 7, 6, 6, 5, 5, 6, 0, 1, 1, 8),
+	(0, 3, 5, 7, 7, 7, 6, 6, 7, 7, 6, 0, 0, 1, 0, 8),
+	(1, 5, 7, 7, 7, 6, 6, 7, 7, 6, 6, 0, 0, 0, 6, 2),
+	(1, 5, 7, 7, 6, 6, 7, 7, 6, 6, 6, 6, 0, 7, 6, 2),
+	(1, 6, 7, 6, 6, 5, 5, 6, 6, 6, 6, 6, 5, 7, 0, 8),
+	(1, 0, 6, 6, 5, 5, 6, 0, 0, 6, 0, 5, 5, 6, 0, 8),
+	(1, 0, 6, 5, 5, 6, 0, 1, 1, 0, 7, 7, 6, 0, 6, 2),
+	(1, 1, 7, 7, 6, 0, 1, 1, 0, 6, 6, 6, 0, 0, 7, 2),
+	(1, 0, 1, 0, 0, 1, 1, 0, 6, 6, 0, 0, 6, 7, 5, 8),
+	(2, 2, 8, 2, 2, 8, 8, 8, 2, 2, 8, 8, 2, 2, 8, 8)
+)
+
+class GoldenBlockTextureImage(IngotBlockTextureImage):
+	"""
+	"Gold" block textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Gold" block textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(GOLDEN_BLOCK):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_BLOCK))
+# End of Gold Based Block
+##################################
 
 # End of Other Textures
 
