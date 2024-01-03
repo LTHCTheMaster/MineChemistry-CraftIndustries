@@ -66,7 +66,7 @@ class Element:
 		self.natural_occurence: str = struct["natural_occurence"]
 		self.file_name: str = self.z.Z_str + "_" + self.name.lower()
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
-		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | SpecialIngotTextureImage | DustTextureImage | Image.Image | None = None
+		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | SpecialIngotTextureImage | SpeciallIngotTextureImage | DustTextureImage | Image.Image | None = None
 		self.block_image: DustBlockTextureImage | CopperBlockTextureImage | IronBlockTextureImage | GoldenBlockTextureImage | Image.Image | None = None
 		if self.state == "solid":
 			if "shape" in struct:
@@ -89,6 +89,8 @@ class Element:
 								self.block_image = CopperBlockTextureImage(self.color)
 							case "special":
 								self.ingot_image = SpecialIngotTextureImage(self.color)
+							case "speciall":
+								self.ingot_image = SpeciallIngotTextureImage(self.color)
 							case _:
 								self.ingot_image = GoldenIngotTextureImage(self.color)
 								self.block_image = GoldenBlockTextureImage(self.color)
@@ -146,7 +148,7 @@ class Element:
 		Related to a really specific image
 		"""
 		if self.state == "solid":
-			if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, DustTextureImage)): 
+			if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, SpeciallIngotTextureImage, DustTextureImage)): 
 				if isinstance(self.block_image, (DustBlockTextureImage, CopperBlockTextureImage, IronBlockTextureImage, GoldenBlockTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.block_image.getImage(), self.coords)
 				else: return (self.image.getImage(), self.ingot_image.getImage(), self.block_image, self.coords)
 			else: 
@@ -161,7 +163,7 @@ class Element:
 		self.image.save(path+"/"+self.file_name)
 		if self.state == "solid":
 			if not self.exclude:
-				if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, DustTextureImage)):
+				if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, SpeciallIngotTextureImage, DustTextureImage)):
 					self.ingot_image.save(path+self.shape+"/"+self.file_name)
 				else:
 					self.ingot_image.save(fp=path+"imported/"+self.file_name+'.png',format="png")

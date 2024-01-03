@@ -984,6 +984,7 @@
 	"Americium": {
 		"Z": "095",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "314ac1",
 		"periodic_draw": {
 			"x": 128,
@@ -994,6 +995,7 @@
 	"Curium": {
 		"Z": "096",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "443dc1",
 		"periodic_draw": {
 			"x": 144,
@@ -1004,6 +1006,7 @@
 	"Berkelium": {
 		"Z": "097",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "5a37be",
 		"periodic_draw": {
 			"x": 160,
@@ -1014,6 +1017,7 @@
 	"Californium": {
 		"Z": "098",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "512eaa",
 		"periodic_draw": {
 			"x": 176,
@@ -1024,6 +1028,7 @@
 	"Einsteinium": {
 		"Z": "099",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "51269b",
 		"periodic_draw": {
 			"x": 192,
@@ -1034,6 +1039,7 @@
 	"Fermium": {
 		"Z": "100",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "5e1c91",
 		"periodic_draw": {
 			"x": 208,
@@ -1044,6 +1050,7 @@
 	"Mendelevium": {
 		"Z": "101",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "651c87",
 		"periodic_draw": {
 			"x": 224,
@@ -1054,6 +1061,7 @@
 	"Nobelium": {
 		"Z": "102",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "721c64",
 		"periodic_draw": {
 			"x": 240,
@@ -1064,6 +1072,7 @@
 	"Lawrencium": {
 		"Z": "103",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "7f0f5f",
 		"periodic_draw": {
 			"x": 32,
@@ -1074,6 +1083,7 @@
 	"Rutherfordium": {
 		"Z": "104",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "9e115f",
 		"periodic_draw": {
 			"x": 48,
@@ -1084,6 +1094,7 @@
 	"Dubnium": {
 		"Z": "105",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "960053",
 		"periodic_draw": {
 			"x": 64,
@@ -1094,6 +1105,7 @@
 	"Seaborgium": {
 		"Z": "106",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "9d0048",
 		"periodic_draw": {
 			"x": 80,
@@ -1114,6 +1126,7 @@
 	"Hassium": {
 		"Z": "108",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "8d001f",
 		"periodic_draw": {
 			"x": 112,
@@ -1124,6 +1137,7 @@
 	"Meitnerium": {
 		"Z": "109",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "79180a",
 		"periodic_draw": {
 			"x": 128,
@@ -1134,6 +1148,7 @@
 	"Darmstadtium": {
 		"Z": "110",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "660404",
 		"periodic_draw": {
 			"x": 144,
@@ -1144,6 +1159,7 @@
 	"Roentgenium": {
 		"Z": "111",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "56081f",
 		"periodic_draw": {
 			"x": 160,
@@ -1164,6 +1180,7 @@
 	"Nihonium": {
 		"Z": "113",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "917e2b",
 		"periodic_draw": {
 			"x": 192,
@@ -1184,6 +1201,7 @@
 	"Moscovium": {
 		"Z": "115",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "ffdbff",
 		"periodic_draw": {
 			"x": 224,
@@ -1194,6 +1212,7 @@
 	"Livermorium": {
 		"Z": "116",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "acdbc8",
 		"periodic_draw": {
 			"x": 240,
@@ -1204,6 +1223,7 @@
 	"Tennessine": {
 		"Z": "117",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "bf6190",
 		"periodic_draw": {
 			"x": 256,
@@ -1214,6 +1234,7 @@
 	"Oganesson": {
 		"Z": "118",
 		"state": "solid",
+		"ingot_type": "speciall",
 		"color": "be4bd3",
 		"periodic_draw": {
 			"x": 272,

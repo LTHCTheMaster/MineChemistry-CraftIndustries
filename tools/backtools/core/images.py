@@ -293,6 +293,51 @@ class SpecialIngotTextureImage(IngotTextureImage):
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_SPECIAL_INGOT))
 # End of Special Ingot
 
+# Speciall Ingot
+PALETTE_SPECIALL_INGOT: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0),
+	(76, 76, 76, 255),
+	(112, 112, 112, 255),
+	(61, 61, 61, 255)
+)
+
+SPECIALL_INGOT: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 2, 2, 1, 0, 0, 0),
+	(0, 0, 0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 0, 0),
+	(0, 1, 1, 1, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 0),
+	(1, 1, 2, 2, 3, 3, 3, 2, 2, 2, 2, 3, 3, 3, 1, 1),
+	(1, 1, 1, 2, 2, 3, 3, 3, 1, 1, 3, 3, 2, 2, 2, 1),
+	(1, 1, 1, 1, 2, 1, 3, 3, 2, 2, 2, 2, 2, 2, 2, 1),
+	(1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1),
+	(1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 0),
+	(0, 1, 1, 1, 1, 1, 2, 2, 2, 1, 3, 3, 0, 0, 0, 0),
+	(0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class SpeciallIngotTextureImage(IngotTextureImage):
+	"""
+	Speciall ingot image
+	"""
+	def __init__(self, color: str):
+		"""
+		Speciall ingot image
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(SPECIALL_INGOT):
+			for x, index in enumerate(line):
+				if index == 0: continue
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_SPECIALL_INGOT))
+# End of Speciall Ingot
+
 # Dust
 PALETTE_DUST: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0), # Transparent
