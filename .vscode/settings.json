@@ -13,7 +13,7 @@
 		".vscode": true,
 		"zip/": true,
 		"**/.gitkeep": true,
-		"Resourcepack/assets/lthc.chemistry/**/imported": true,
+		"Resourcepack/assets/lthc.chemistry/**/imported**": true,
 		"Datapack/data/global": true,
 		"tools/backtools/core/autofilecontainer": true,
 		"requirements.txt": true
