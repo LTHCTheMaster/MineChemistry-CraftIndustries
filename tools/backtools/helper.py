@@ -40,7 +40,8 @@ def printHelpMessage():
 	print(formatHelpLine("export", "export all elements names in a file", 4, "<path>"))
 	print(formatHelpMultiLine(0, "registry, register, reg", (
 		("elements", "build basic elements related items registry", 3),
-		("solid", "build basic solid state elements related items (dusts, ingots) registry", 4)
+		("solid", "build basic solid state elements related items (dusts, ingots) registry", 4),
+		("block", "build block registry", 4)
 	)))
 	print(formatHelpMultiLine(0, "image, img", (
 		("build", (
