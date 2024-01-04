@@ -16,6 +16,8 @@ del /Q Resourcepack\assets\lthc.chemistry\models\elements\*.json
 del /Q Resourcepack\assets\lthc.chemistry\models\elements\dust\*.json
 del /Q Resourcepack\assets\lthc.chemistry\models\elements\ingot\*.json
 del /Q Resourcepack\assets\lthc.chemistry\models\elements\imported\*.json
+del /Q Resourcepack\assets\lthc.chemistry\models\block\*.json
+del /Q Resourcepack\assets\lthc.chemistry\models\block\barrel\*.json
 del /Q Resourcepack\assets\lthc.chemistry\textures\block\elements\*.png
 del /Q Resourcepack\assets\lthc.chemistry\textures\block\elements\dust\*.png
 del /Q Resourcepack\assets\lthc.chemistry\textures\block\elements\ingot\*.png
