@@ -68,6 +68,7 @@ class Element:
 		self.image: BlankImage = eval(f"{self.state}_Image('{self.color}','{self.natural_occurence}')")
 		self.ingot_image: GoldenIngotTextureImage | CopperIngotTextureImage | IronIngotTextureImage | SpecialIngotTextureImage | SpeciallIngotTextureImage | DustTextureImage | Image.Image | None = None
 		self.block_image: DustBlockTextureImage | CopperBlockTextureImage | IronBlockTextureImage | GoldenBlockTextureImage | Image.Image | None = None
+		self.nugget_image: IronNuggetTextureImage | GoldenNuggetTextureImage | None = None
 		if self.state == "solid":
 			if "shape" in struct:
 				self.shape: str = struct["shape"]
@@ -81,9 +82,11 @@ class Element:
 							case "gold":
 								self.ingot_image = GoldenIngotTextureImage(self.color)
 								self.block_image = GoldenBlockTextureImage(self.color)
+								self.nugget_image = GoldenNuggetTextureImage(self.color)
 							case "iron":
 								self.ingot_image = IronIngotTextureImage(self.color)
 								self.block_image = IronBlockTextureImage(self.color)
+								self.nugget_image = IronNuggetTextureImage(self.color)
 							case "copper":
 								self.ingot_image = CopperIngotTextureImage(self.color)
 								self.block_image = CopperBlockTextureImage(self.color)
@@ -97,6 +100,7 @@ class Element:
 					else:
 						self.ingot_image = GoldenIngotTextureImage(self.color)
 						self.block_image = GoldenBlockTextureImage(self.color)
+						self.nugget_image = GoldenNuggetTextureImage(self.color)
 				case "dust":
 					try:
 						if "color_override" in struct:
@@ -120,6 +124,12 @@ class Element:
 							self.block_image.load()
 						except:
 							self.fallback()
+						try:
+							self.nugget_image = Image.open(tmp_base_path + "nugget.png")
+							self.nugget_image.convert(mode="RGBA")
+							self.nugget_image.load()
+						except:
+							self.nugget_image = None
 					else:
 						self.fallback()
 				case _:
@@ -136,6 +146,7 @@ class Element:
 		self.shape: str = "ingot"
 		self.ingot_image = GoldenIngotTextureImage(self.color)
 		self.block_image = GoldenBlockTextureImage(self.color)
+		self.nugget_image = GoldenNuggetTextureImage(self.color)
 
 	def __str__(self) -> str:
 		"""
@@ -143,18 +154,26 @@ class Element:
 		"""
 		return f"{self.name.upper()}:\n\tAtomic Number:\n{self.z}\n\tState: {self.state.capitalize()}\n\tNatural Occurence: {self.natural_occurence.capitalize()}"
 
-	def getDrawStruct(self) -> tuple[Image.Image, Image.Image | None, Image.Image | None, Coords]:
+	def getDrawStruct(self) -> tuple[Image.Image, Image.Image | None, Image.Image | None, Image.Image | None, Coords]:
 		"""
 		Related to a really specific image
 		"""
 		if self.state == "solid":
 			if isinstance(self.ingot_image, (GoldenIngotTextureImage, IronIngotTextureImage, CopperIngotTextureImage, SpecialIngotTextureImage, SpeciallIngotTextureImage, DustTextureImage)): 
-				if isinstance(self.block_image, (DustBlockTextureImage, CopperBlockTextureImage, IronBlockTextureImage, GoldenBlockTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.block_image.getImage(), self.coords)
-				else: return (self.image.getImage(), self.ingot_image.getImage(), self.block_image, self.coords)
+				if isinstance(self.block_image, (DustBlockTextureImage, CopperBlockTextureImage, IronBlockTextureImage, GoldenBlockTextureImage)):
+					if isinstance(self.nugget_image, (IronNuggetTextureImage, GoldenNuggetTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.block_image.getImage(), self.nugget_image.getImage(), self.coords)
+					else: return (self.image.getImage(), self.ingot_image.getImage(), self.block_image.getImage(), self.nugget_image, self.coords)
+				else:
+					if isinstance(self.nugget_image, (IronNuggetTextureImage, GoldenNuggetTextureImage)): return (self.image.getImage(), self.ingot_image.getImage(), self.block_image, self.nugget_image.getImage(), self.coords)
+					else: return (self.image.getImage(), self.ingot_image.getImage(), self.block_image, self.nugget_image, self.coords)
 			else: 
-				if isinstance(self.block_image, (DustBlockTextureImage, CopperBlockTextureImage, IronBlockTextureImage, GoldenBlockTextureImage)): return (self.image.getImage(), self.ingot_image, self.block_image.getImage(), self.coords)
-				else: return (self.image.getImage(), self.ingot_image, self.block_image, self.coords)
-		else: return (self.image.getImage(), None, None, self.coords)
+				if isinstance(self.block_image, (DustBlockTextureImage, CopperBlockTextureImage, IronBlockTextureImage, GoldenBlockTextureImage)):
+					if isinstance(self.nugget_image, (IronNuggetTextureImage, GoldenNuggetTextureImage)): return (self.image.getImage(), self.ingot_image, self.block_image.getImage(), self.nugget_image.getImage(), self.coords)
+					else: return (self.image.getImage(), self.ingot_image, self.block_image.getImage(), self.nugget_image, self.coords)
+				else:
+					if isinstance(self.nugget_image, (IronNuggetTextureImage, GoldenNuggetTextureImage)): return (self.image.getImage(), self.ingot_image, self.block_image, self.nugget_image.getImage(), self.coords)
+					else: return (self.image.getImage(), self.ingot_image, self.block_image, self.nugget_image, self.coords)
+		else: return (self.image.getImage(), None, None, None, self.coords)
 
 	def save(self, path: str):
 		"""
@@ -171,6 +190,10 @@ class Element:
 					self.block_image.save(path+self.shape+"_block/"+self.file_name)
 				else:
 					if isinstance(self.block_image, Image.Image): self.block_image.save(fp=path+"imported_block/"+self.file_name+'.png',format="png")
+				if isinstance(self.nugget_image, (IronNuggetTextureImage, GoldenNuggetTextureImage)):
+					self.nugget_image.save(path+self.shape+"_nugget/"+self.file_name)
+				else:
+					if isinstance(self.nugget_image, Image.Image): self.nugget_image.save(fp=path+"imported_nugget/"+self.file_name+'.png',format="png")
 
 # A constant here ?
 ELEMENT_PATH: str = "tools/data/elements.struct"

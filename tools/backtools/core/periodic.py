@@ -29,7 +29,7 @@ class PeriodicTableBuilder:
 		Draw tables
 		"""
 		for i in  self.elements.elements:
-			img, ingotimg, blockimg, coords = i.getDrawStruct()
+			img, ingotimg, blockimg, nuggetimg,  coords = i.getDrawStruct()
 			self.image.paste(img, coords.pos, img)
 			if isinstance(ingotimg, Image.Image):
 				self.ingot_image.paste(ingotimg, coords.pos, ingotimg)
