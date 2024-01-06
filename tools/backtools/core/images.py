@@ -635,17 +635,14 @@ class NuggetTextureImage(PureBaseImage):
 # Iron Based Nugget
 PALETTE_IRON_NUGGET: tuple[tuple[int, int, int, int]] = (
 	(0, 0, 0, 0),
-	(60, 60, 60, 0),
-	(94, 94, 94, 255),
-	(133, 133, 133, 0),
-	(198, 198, 198, 255),
-	(222, 222, 222, 255),
-	(242, 242, 242, 255),
-	(173, 173, 173, 255),
-	(60, 60, 60, 255),
-	(94, 94, 94, 0),
-	(133, 133, 133, 255),
-	(200, 200, 200, 255)
+	makeColorTuple("5E"*3),
+	makeColorTuple("3C"*3),
+	makeColorTuple("C6"*3),
+	makeColorTuple("DE"*3),
+	makeColorTuple("F2"*3),
+	makeColorTuple("AD"*3),
+	makeColorTuple("85"*3),
+	makeColorTuple("C8"*3)
 )
 
 IRON_NUGGET: tuple[tuple[int]] = (
@@ -653,18 +650,13 @@ IRON_NUGGET: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 2, 2, 3, 1, 1, 1, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 2, 4, 5, 2, 2, 2, 3, 1, 0, 0, 0),
-	(0, 0, 0, 0, 2, 5, 6, 6, 5, 7, 7, 8, 9, 0, 0, 0),
-	(0, 0, 0, 0, 2, 6, 5, 5, 7, 10, 10, 8, 0, 0, 0, 0),
-	(0, 0, 0, 0, 2, 11, 4, 4, 8, 8, 8, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+	(0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 1, 3, 4, 1, 1, 1, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 1, 4, 5, 5, 4, 6, 6, 2, 0, 0, 0, 0),
+	(0, 0, 0, 0, 1, 5, 4, 4, 6, 7, 7, 2, 0, 0, 0, 0),
+	(0, 0, 0, 0, 1, 8, 3, 3, 2, 2, 2, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0)
 )
 
 class IronNuggetTextureImage(NuggetTextureImage):
@@ -683,6 +675,7 @@ class IronNuggetTextureImage(NuggetTextureImage):
 		"""
 		for y, line in enumerate(IRON_NUGGET):
 			for x, index in enumerate(line):
+				if index == 0: continue
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_IRON_NUGGET))
 # End of Iron Based Nugget
 
@@ -710,11 +703,7 @@ GOLDEN_NUGGET: tuple[tuple[int]] = (
 	(0, 0, 0, 0, 0, 1, 5, 5, 6, 7, 4, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 1, 2, 7, 7, 4, 0, 0, 0, 0, 0),
 	(0, 0, 0, 0, 0, 0, 1, 2, 7, 4, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+	(0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0)
 )
 
 class GoldenNuggetTextureImage(NuggetTextureImage):
@@ -733,6 +722,7 @@ class GoldenNuggetTextureImage(NuggetTextureImage):
 		"""
 		for y, line in enumerate(GOLDEN_NUGGET):
 			for x, index in enumerate(line):
+				if index == 0: continue
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_NUGGET))
 # End of Golden Based Nugget
 

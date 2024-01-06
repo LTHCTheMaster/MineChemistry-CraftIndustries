@@ -21,6 +21,7 @@ class PeriodicTableBuilder:
 		self.image = Image.new("RGBA", SIZE, BLANK_PERIOD)
 		self.ingot_image = Image.new("RGBA", SIZE, BLANK_PERIOD)
 		self.block_image = Image.new("RGBA", SIZE, BLANK_PERIOD)
+		self.nugget_image = Image.new("RGBA", SIZE, BLANK_PERIOD)
 		self.elements = elements
 		self.draw()
 	
@@ -35,6 +36,8 @@ class PeriodicTableBuilder:
 				self.ingot_image.paste(ingotimg, coords.pos, ingotimg)
 			if isinstance(blockimg, Image.Image):
 				self.block_image.paste(blockimg, coords.pos, blockimg)
+			if isinstance(nuggetimg, Image.Image):
+				self.nugget_image.paste(nuggetimg, coords.pos, nuggetimg)
 	
 	def show(self, cmd: list[str]):
 		"""
@@ -46,6 +49,10 @@ class PeriodicTableBuilder:
 			return
 		if cmd[0] == "block":
 			tmp = self.block_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
+			tmp.show()
+			return
+		if cmd[0] == "nugget":
+			tmp = self.nugget_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
 			tmp.show()
 			return
 		tmp = self.image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
@@ -63,3 +70,5 @@ class PeriodicTableBuilder:
 		tmp.save(fp=path+"/000_TableauPNG_INGOT.png",format="png")
 		tmp = self.block_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
 		tmp.save(fp=path+"/000_TableauPNG_BLOCK.png",format="png")
+		tmp = self.nugget_image.resize(RESCALED_SIZE, Image.Resampling.NEAREST)
+		tmp.save(fp=path+"/000_TableauPNG_NUGGET.png",format="png")

@@ -51,7 +51,7 @@ def printHelpMessage():
 		)),
 		("show", (
 			(("element <number|element name>", "show the specified elements", 1),),
-			(("\t periodic [\033[4mingot\033[0m\033[92m|\033[4mblock\033[0m\033[92m]", "show periodic table", 2),)
+			(("\t periodic [\033[4mingot\033[0m\033[92m|\033[4mblock\033[0m\033[92m|\033[4mnugget\033[0m\033[92m]", "show periodic table", 1),)
 		)),
 		("reload", " reload data for textures (and also data)", 2),
 		("rp", " build the RP", 3)
