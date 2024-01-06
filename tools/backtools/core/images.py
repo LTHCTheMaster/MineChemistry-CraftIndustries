@@ -765,6 +765,8 @@ class TemplateImageExporter:
 		self.ingot1BlockTemplate: TemplateImg = TemplateImg("000000", IRON_BLOCK, PALETTE_IRON_BLOCK)
 		self.ingot2BlockTemplate: TemplateImg = TemplateImg("000000", GOLDEN_BLOCK, PALETTE_GOLDEN_BLOCK)
 		self.dustBlockTemplate: TemplateImg = TemplateImg("000000", DUST_BLOCK, PALETTE_DUST_BLOCK)
+		self.nugget1Template: TemplateImg = TemplateImg("000000", IRON_NUGGET, PALETTE_IRON_NUGGET)
+		self.nugget2Template: TemplateImg = TemplateImg("000000", GOLDEN_NUGGET, PALETTE_GOLDEN_NUGGET)
 	
 	def export(self, path: str):
 		"""
@@ -782,6 +784,8 @@ class TemplateImageExporter:
 		self.ingot1BlockTemplate.save(path+'/ingot1_block_template')
 		self.ingot2BlockTemplate.save(path+'/ingot2_block_template')
 		self.dustBlockTemplate.save(path+'/dust_block_template')
+		self.nugget1Template.save(path+'/nugget1_template')
+		self.nugget2Template.save(path+'/nugget2_template')
 # End of Other Textures
 
 ##############################################################################
