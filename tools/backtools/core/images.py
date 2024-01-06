@@ -60,8 +60,6 @@ from .autofilecontainer.images import *
 ##############################################################################
 
 # Other Textures
-
-##################################
 class ItemTextureImage(PureBaseImage):
 	"""
 	The base image for all "solid shaped" elements
@@ -394,7 +392,6 @@ class DustTextureImage(ItemTextureImage):
 				self.image.putpixel((x, y), colorEditionDust(self.color, index, PALETTE_DUST)) if index not in (1, 2) else self.image.putpixel((x, y), colorEditionDust(colorEditionDust(self.color, index, PALETTE_DUST), index, PALETTE_DUST))
 # End of Dust
 
-##################################
 class BlockTextureImage(PureBaseImage):
 	"""
 	The base image for all blocks for "solid shaped" elements
@@ -623,9 +620,122 @@ class GoldenBlockTextureImage(IngotBlockTextureImage):
 			for x, index in enumerate(line):
 				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_BLOCK))
 # End of Gold Based Block
-##################################
 
-##################################
+class NuggetTextureImage(PureBaseImage):
+	"""
+	The base image for all nuggets for "solid shaped" elements
+	"""
+	def __init__(self, color: str):
+		"""
+		The base image for all nuggets for "solid shaped" elements
+		"""
+		super().__init__(color)
+		self.draw()
+
+# Iron Based Nugget
+PALETTE_IRON_NUGGET: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0),
+	(60, 60, 60, 0),
+	(94, 94, 94, 255),
+	(133, 133, 133, 0),
+	(198, 198, 198, 255),
+	(222, 222, 222, 255),
+	(242, 242, 242, 255),
+	(173, 173, 173, 255),
+	(60, 60, 60, 255),
+	(94, 94, 94, 0),
+	(133, 133, 133, 255),
+	(200, 200, 200, 255)
+)
+
+IRON_NUGGET: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 2, 2, 3, 1, 1, 1, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 2, 4, 5, 2, 2, 2, 3, 1, 0, 0, 0),
+	(0, 0, 0, 0, 2, 5, 6, 6, 5, 7, 7, 8, 9, 0, 0, 0),
+	(0, 0, 0, 0, 2, 6, 5, 5, 7, 10, 10, 8, 0, 0, 0, 0),
+	(0, 0, 0, 0, 2, 11, 4, 4, 8, 8, 8, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class IronNuggetTextureImage(NuggetTextureImage):
+	"""
+	"Iron" nugget textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Iron" nugget textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(IRON_NUGGET):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_IRON_NUGGET))
+# End of Iron Based Nugget
+
+# Golden Based Nugget
+PALETTE_GOLDEN_NUGGET: tuple[tuple[int, int, int, int]] = (
+	(0, 0, 0, 0),
+	(87, 87, 87, 255),
+	(209, 209, 209, 255),
+	(232, 232, 232, 255),
+	(76, 76, 76, 255),
+	(255, 255, 255, 255),
+	(176, 176, 176, 255),
+	(156, 156, 156, 255)
+)
+
+GOLDEN_NUGGET: tuple[tuple[int]] = (
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 1, 2, 3, 2, 4, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 1, 3, 3, 3, 5, 4, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 1, 3, 3, 5, 6, 4, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 1, 5, 5, 6, 7, 4, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 1, 2, 7, 7, 4, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 1, 2, 7, 4, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 1, 4, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+	(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+)
+
+class GoldenNuggetTextureImage(NuggetTextureImage):
+	"""
+	"Golden" nugget textures
+	"""
+	def __init__(self, color: str):
+		"""
+		"Golden" nugget textures
+		"""
+		super().__init__(color)
+	
+	def draw(self):
+		"""
+		Drawings
+		"""
+		for y, line in enumerate(GOLDEN_NUGGET):
+			for x, index in enumerate(line):
+				self.image.putpixel((x, y), colorEditionIngot(self.color, index, PALETTE_GOLDEN_NUGGET))
+# End of Golden Based Nugget
+
 class TemplateImg(PureBaseImage):
 	"""
 	Template Image
@@ -682,8 +792,6 @@ class TemplateImageExporter:
 		self.ingot1BlockTemplate.save(path+'/ingot1_block_template')
 		self.ingot2BlockTemplate.save(path+'/ingot2_block_template')
 		self.dustBlockTemplate.save(path+'/dust_block_template')
-##################################
-
 # End of Other Textures
 
 ##############################################################################
